@@ -6,6 +6,7 @@ ENV LANG en_US.UTF-8
 
 COPY sources.list /etc/apt/sources.list
 RUN apt-get update && \
+	apt-get upgrade -y && \
     apt-get install -y --no-install-recommends gnupg1 openssl ca-certificates locales tzdata && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6A755776 && \
     apt-get autoremove -y && \
