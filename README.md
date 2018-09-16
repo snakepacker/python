@@ -1,3 +1,19 @@
+Simple way to build a python project
+====================================
+
+This repository provide and demonstrate method to build the python-package to small image on modern Ubuntu Bionic.
+
+Concept
+-------
+
+The main idea of this method is building your package into `virtualenv` and copy obtained `virtualenv` to the `base image` with suitable python version.
+
+Example
+-------
+
+For example you may build the `jupyter notebook`. Just create the Dockerfile with following content:
+
+```Dockerfile
 #################################################################
 ####################### BUILD STAGE #############################
 #################################################################
@@ -26,3 +42,9 @@ COPY --from=builder /usr/share/python3/app /usr/share/python3/app
 RUN ln -snf /usr/share/python3/app/bin/ipython /usr/bin/
 
 CMD ["ipython"]
+```
+
+And just build this:
+```bash
+docker build -t ipython .
+```
