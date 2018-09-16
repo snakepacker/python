@@ -1,5 +1,5 @@
 #################################################################
-FROM snakepacker/python:all as builder
+FROM snakepacker/python:all as ipython-builder
 
 RUN virtualenv -p python3.7 /usr/share/python3/app
 

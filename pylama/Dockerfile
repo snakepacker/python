@@ -1,5 +1,5 @@
 #################################################################
-FROM snakepacker/python:all as builder
+FROM snakepacker/python:all as pylama-builder
 
 RUN virtualenv -p python3.6 /usr/share/python3/app
 RUN /usr/share/python3/app/bin/pip install -U 'pylama'
