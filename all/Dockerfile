@@ -7,6 +7,7 @@ RUN apt-get update && \
     apt-get install -y \
         git-core \
         virtualenv \
+        python \
         python2.3 \
         python2.4 \
         python2.5 \
@@ -18,6 +19,7 @@ RUN apt-get update && \
         python3.5 \
         python3.6 \
         python3.7 \
+        python-dev \
         python2.3-dev \
         python2.4-dev \
         python2.5-dev \
