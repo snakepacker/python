@@ -5,6 +5,8 @@ ENV TZ Etc/UTC
 ENV LANG en_US.UTF-8
 
 COPY sources.list /etc/apt/sources.list
+COPY apt.conf /etc/apt/apt.conf
+
 RUN apt-get update && \
 	apt-get upgrade -y && \
     apt-get install -y --no-install-recommends gnupg1 openssl ca-certificates locales tzdata && \
