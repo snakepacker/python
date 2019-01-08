@@ -34,9 +34,10 @@ RUN apt-get update && \
         python3-pip \
         build-essential && \
     rm -fr /var/lib/apt/lists/* && \
-    pip3 install tox && \
+    pip3 install tox coveralls && \
     ln -snf /usr/local/bin/tox /usr/bin/tox && \
-    chmod a+x /usr/bin/tox
+    ln -snf /usr/local/bin/coveralls /usr/bin/coveralls && \
+    chmod a+x /usr/bin/tox /usr/bin/coveralls
 
 ENV PIP_CONFIG_FILE /etc/pip.conf
 
