@@ -42,3 +42,5 @@ ENV PIP_CONFIG_FILE /etc/pip.conf
 
 RUN mkdir -p /var/cache/pip
 ENV PIP_DOWNLOAD_CACHE=/var/cache/pip
+
+COPY wait-for-port.py /usr/bin/wait-for-port
