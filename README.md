@@ -1,6 +1,8 @@
 A simple way to build a Python project
 ======================================
 
+[![](logo.png)]
+
 This repository provides and demonstrates a way to pack python package into a
 compact Docker image, based on modern
 [Ubuntu Bionic](https://help.ubuntu.ru/wiki/bionicbeaver) operation system.
