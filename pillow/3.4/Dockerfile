@@ -8,3 +8,5 @@ RUN apt-get update && \
       libpng16-16 \
       libtiff5 && \
     rm -fr /var/lib/apt/lists/*
+
+COPY --from=snakepacker/python:all-pillow /usr/lib/libimagequant.so* /usr/lib/
