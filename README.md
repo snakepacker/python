@@ -14,6 +14,7 @@ Tag      | Info | Features
  ------- | ---- | --------
 all      | [![](https://images.microbadger.com/badges/image/snakepacker/python:all.svg)](https://microbadger.com/images/snakepacker/python:all) | all available python versions, libpython headers and compiler
 all-pillow | [![](https://images.microbadger.com/badges/image/snakepacker/python:all-pillow.svg)](https://microbadger.com/images/snakepacker/python:all-pillow) |  all available python versions, libpython headers, graphics libraries headers and compiler
+[3.8](https://docs.python.org/3/whatsnew/3.8.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.8.svg)](https://microbadger.com/images/snakepacker/python:3.8) | pure python 3.8
 [3.7](https://docs.python.org/3/whatsnew/3.7.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.7.svg)](https://microbadger.com/images/snakepacker/python:3.7) | pure python 3.7
 [3.6](https://docs.python.org/3/whatsnew/3.6.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.6.svg)](https://microbadger.com/images/snakepacker/python:3.6) | pure python 3.6
 [3.5](https://docs.python.org/3/whatsnew/3.5.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.5.svg)](https://microbadger.com/images/snakepacker/python:3.5) | pure python 3.5
@@ -26,6 +27,7 @@ all-pillow | [![](https://images.microbadger.com/badges/image/snakepacker/python
 [2.5](https://docs.python.org/2/whatsnew/2.5.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.5.svg)](https://microbadger.com/images/snakepacker/python:2.5) | pure python 2.5
 [2.4](https://docs.python.org/2/whatsnew/2.4.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.4.svg)](https://microbadger.com/images/snakepacker/python:2.4) | pure python 2.4
 [2.3](https://docs.python.org/2/whatsnew/2.3.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.3.svg)](https://microbadger.com/images/snakepacker/python:2.3) | pure python 2.3
+[3.8-pillow](https://docs.python.org/3/whatsnew/3.8.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.8-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.8-pillow) | pure python 3.8 with graphics libraries binaries
 [3.7-pillow](https://docs.python.org/3/whatsnew/3.7.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.7-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.7-pillow) | pure python 3.7 with graphics libraries binaries
 [3.6-pillow](https://docs.python.org/3/whatsnew/3.6.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.6-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.6-pillow) | pure python 3.6 with graphics libraries binaries
 [3.5-pillow](https://docs.python.org/3/whatsnew/3.5.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.5-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.5-pillow) | pure python 3.5 with graphics libraries binaries

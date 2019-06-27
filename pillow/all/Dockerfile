@@ -11,12 +11,12 @@ RUN cp libimagequant.h /usr/include/
 FROM snakepacker/python:all
 
 RUN apt-get update && \
-    apt-get install -y \
-      libgif-dev \
-      libjpeg-dev \
-      libpng-dev \
-      libtiff-dev && \
-    rm -fr /var/lib/apt/lists/*
+	apt-get install -y \
+		libgif-dev \
+		libjpeg-dev \
+		libpng-dev \
+		libtiff-dev && \
+	rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
 
 COPY --from=pillow-builder /usr/lib/libimagequant.so* /usr/lib/
 COPY --from=pillow-builder /usr/include/libimagequant.h /usr/include/

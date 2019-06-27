@@ -9,9 +9,9 @@ COPY apt.conf /etc/apt/apt.conf
 
 RUN apt-get update && \
 	apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends gnupg1 openssl ca-certificates locales tzdata && \
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6A755776 && \
-    apt-get autoremove -y && \
-    rm -fr /var/lib/apt/lists/*
+	apt-get install -y --no-install-recommends gnupg1 openssl ca-certificates locales tzdata && \
+	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6A755776 && \
+	apt-get autoremove -y && \
+	rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
 
 COPY deadsnakes.list /etc/apt/sources.list.d/deadsnakes.list
