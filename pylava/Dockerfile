@@ -1,7 +1,7 @@
 #################################################################
 FROM snakepacker/python:all as pylava-builder
 
-RUN virtualenv -p python3.6 /usr/share/python3/app
+RUN python3.6 -m venv /usr/share/python3/app
 RUN /usr/share/python3/app/bin/pip install -U 'pylava'
 
 ########################################################################

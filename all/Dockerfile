@@ -22,6 +22,8 @@ RUN apt-get update && apt-get install -y \
 	python3.6-dev \
 	python3-setuptools \
 	python3-wheel \
+	python3-venv \
+	python3-virtualenv \
 	python3-pip && \
 	rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
 
@@ -34,8 +36,8 @@ RUN apt-get update && apt-get install -y python3.2 python3.2-dev && rm -fr /var/
 RUN apt-get update && apt-get install -y python3.3 python3.3-dev && rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
 RUN apt-get update && apt-get install -y python3.4 python3.4-dev && rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
 RUN apt-get update && apt-get install -y python3.5 python3.5-dev && rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
-RUN apt-get update && apt-get install -y python3.7 python3.7-dev && rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
-RUN apt-get update && apt-get install -y python3.8 python3.8-dev python3.8-distutils && rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
+RUN apt-get update && apt-get install -y python3.7 python3.7-dev python3.7-venv && rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
+RUN apt-get update && apt-get install -y python3.8 python3.8-dev python3.8-distutils python3.8-venv && rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
 
 RUN pip3 install tox coveralls && \
 	ln -snf /usr/local/bin/tox /usr/bin/tox && \
