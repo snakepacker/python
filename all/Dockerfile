@@ -8,13 +8,15 @@ RUN apt-get update && apt-get install -y \
 		build-essential && \
 	rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
 
+ADD https://bootstrap.pypa.io/get-pip.py /usr/share/python/get-pip.py
+
 RUN apt-get update && apt-get install -y \
 		virtualenv \
 		python \
 		python-dev \
-		python-pip \
 		python-setuptools \
 		python-wheel && \
+	python /usr/share/python/get-pip.py && \
 	rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
 
 RUN apt-get update && apt-get install -y \
@@ -23,8 +25,8 @@ RUN apt-get update && apt-get install -y \
 	python3-setuptools \
 	python3-wheel \
 	python3-venv \
-	python3-virtualenv \
-	python3-pip && \
+	python3-virtualenv && \
+	python3 /usr/share/python/get-pip.py && \
 	rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
 
 RUN apt-get update && apt-get install -y python2.3 python2.3-dev && rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
