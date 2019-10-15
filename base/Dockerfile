@@ -10,7 +10,7 @@ COPY apt.conf /etc/apt/apt.conf
 
 RUN apt-get update && \
 	apt-get upgrade -y && \
-	apt-get install -y --no-install-recommends gnupg1 openssl ca-certificates locales tzdata && \
+	apt-get install -y --no-install-recommends gnupg1 openssl ca-certificates locales tzdata libffi6 && \
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6A755776 && \
 	apt-get autoremove -y && \
 	ln -snf /usr/share/zoneinfo/Etc/UTC /etc/localtime && \

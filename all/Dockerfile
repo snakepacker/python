@@ -5,7 +5,7 @@ ENV PYTHONDONTWRITEBYTECODE=True
 # Install headers for useful libraries
 RUN apt-get update && apt-get install -y \
 		git-core \
-		build-essential && \
+		build-essential libffi-dev && \
 	rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
 
 ADD https://bootstrap.pypa.io/get-pip.py /usr/share/python/get-pip.py
