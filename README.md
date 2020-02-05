@@ -10,38 +10,38 @@ compact Docker image, based on modern
 Available images
 ----------------
 
-Tag      | Info | Features
- ------- | ---- | --------
-modern   | [![](https://images.microbadger.com/badges/image/snakepacker/python:modern.svg)](https://microbadger.com/images/snakepacker/python:modern) | modern python versions (3.5, 3.6, 3.7, 3.8, 3.9), libpython headers and compiler
-modern-pillow   | [![](https://images.microbadger.com/badges/image/snakepacker/python:modern-pillow.svg)](https://microbadger.com/images/snakepacker/python:modern-pillow) | modern python versions (3.5, 3.6, 3.7, 3.8, 3.9), libpython headers, graphics libraries headers and compiler
-all      | [![](https://images.microbadger.com/badges/image/snakepacker/python:all.svg)](https://microbadger.com/images/snakepacker/python:all) | all available python versions, libpython headers and compiler
-all-pillow | [![](https://images.microbadger.com/badges/image/snakepacker/python:all-pillow.svg)](https://microbadger.com/images/snakepacker/python:all-pillow) |  all available python versions, libpython headers, graphics libraries headers and compiler
+Tag      | Info | Purpose | Features
+ ------- | ---- | ------- | --------
+modern   | [![](https://images.microbadger.com/badges/image/snakepacker/python:modern.svg)](https://microbadger.com/images/snakepacker/python:modern) | build stage | modern python versions (3.5, 3.6, 3.7, 3.8, 3.9), libpython headers and compiler
+modern-pillow   | [![](https://images.microbadger.com/badges/image/snakepacker/python:modern-pillow.svg)](https://microbadger.com/images/snakepacker/python:modern-pillow) | build stage | modern python versions (3.5, 3.6, 3.7, 3.8, 3.9), libpython headers, graphics libraries headers and compiler
+all      | [![](https://images.microbadger.com/badges/image/snakepacker/python:all.svg)](https://microbadger.com/images/snakepacker/python:all) | build stage | all available python versions, libpython headers and compiler
+all-pillow | [![](https://images.microbadger.com/badges/image/snakepacker/python:all-pillow.svg)](https://microbadger.com/images/snakepacker/python:all-pillow) | build stage |  all available python versions, libpython headers, graphics libraries headers and compiler
 [3.9](https://docs.python.org/3/whatsnew/3.9.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.9.svg)](https://microbadger.com/images/snakepacker/python:3.9) | pure python 3.9
-[3.8](https://docs.python.org/3/whatsnew/3.8.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.8.svg)](https://microbadger.com/images/snakepacker/python:3.8) | pure python 3.8
-[3.7](https://docs.python.org/3/whatsnew/3.7.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.7.svg)](https://microbadger.com/images/snakepacker/python:3.7) | pure python 3.7
-[3.6](https://docs.python.org/3/whatsnew/3.6.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.6.svg)](https://microbadger.com/images/snakepacker/python:3.6) | pure python 3.6
-[3.5](https://docs.python.org/3/whatsnew/3.5.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.5.svg)](https://microbadger.com/images/snakepacker/python:3.5) | pure python 3.5
-[3.4](https://docs.python.org/3/whatsnew/3.4.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.4.svg)](https://microbadger.com/images/snakepacker/python:3.4) | pure python 3.4
-[3.3](https://docs.python.org/3/whatsnew/3.3.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.3.svg)](https://microbadger.com/images/snakepacker/python:3.3) | pure python 3.3
-[3.2](https://docs.python.org/3/whatsnew/3.2.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.2.svg)](https://microbadger.com/images/snakepacker/python:3.2) | pure python 3.2
-[3.1](https://docs.python.org/3/whatsnew/3.1.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.1.svg)](https://microbadger.com/images/snakepacker/python:3.1) | pure python 3.1
-[2.7](https://docs.python.org/2/whatsnew/2.7.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.7.svg)](https://microbadger.com/images/snakepacker/python:2.7) | pure python 2.7
-[2.6](https://docs.python.org/2/whatsnew/2.6.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.6.svg)](https://microbadger.com/images/snakepacker/python:2.6) | pure python 2.6
-[2.5](https://docs.python.org/2/whatsnew/2.5.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.5.svg)](https://microbadger.com/images/snakepacker/python:2.5) | pure python 2.5
-[2.4](https://docs.python.org/2/whatsnew/2.4.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.4.svg)](https://microbadger.com/images/snakepacker/python:2.4) | pure python 2.4
-[2.3](https://docs.python.org/2/whatsnew/2.3.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.3.svg)](https://microbadger.com/images/snakepacker/python:2.3) | pure python 2.3
-[3.8-pillow](https://docs.python.org/3/whatsnew/3.8.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.8-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.8-pillow) | pure python 3.8 with graphics libraries binaries
-[3.9-pillow](https://docs.python.org/3/whatsnew/3.9.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.9-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.9-pillow) | pure python 3.9 with graphics libraries binaries
-[3.7-pillow](https://docs.python.org/3/whatsnew/3.7.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.7-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.7-pillow) | pure python 3.7 with graphics libraries binaries
-[3.6-pillow](https://docs.python.org/3/whatsnew/3.6.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.6-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.6-pillow) | pure python 3.6 with graphics libraries binaries
-[3.5-pillow](https://docs.python.org/3/whatsnew/3.5.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.5-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.5-pillow) | pure python 3.5 with graphics libraries binaries
-[3.4-pillow](https://docs.python.org/3/whatsnew/3.4.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.4-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.4-pillow) | pure python 3.4 with graphics libraries binaries
-[2.7-pillow](https://docs.python.org/2/whatsnew/2.7.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.7-pillow.svg)](https://microbadger.com/images/snakepacker/python:2.7-pillow) | pure python 3.3 with graphics libraries binaries
-[pylama](https://pylama.readthedocs.io/en/latest/) | [![](https://images.microbadger.com/badges/image/snakepacker/python:pylama.svg)](https://microbadger.com/images/snakepacker/python:pylama) | pylama application image (useful for drone.ci)
-[pylava](https://pylavadocs.readthedocs.io/en/latest/) | [![](https://images.microbadger.com/badges/image/snakepacker/python:pylava.svg)](https://microbadger.com/images/snakepacker/python:pylava) | pylava application image (useful for drone.ci)
-[ipython](https://jupyter.org) | [![](https://images.microbadger.com/badges/image/snakepacker/python:ipython.svg)](https://microbadger.com/images/snakepacker/python:ipython) | ipython application image
-[certbot](https://certbot.eff.org) | [![](https://images.microbadger.com/badges/image/snakepacker/python:certbot.svg)](https://microbadger.com/images/snakepacker/python:certbot) | certbot application image
-base     | [![](https://images.microbadger.com/badges/image/snakepacker/python:base.svg)](https://microbadger.com/images/snakepacker/python:base)
+[3.8](https://docs.python.org/3/whatsnew/3.8.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.8.svg)](https://microbadger.com/images/snakepacker/python:3.8) | target stage | pure python 3.8
+[3.7](https://docs.python.org/3/whatsnew/3.7.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.7.svg)](https://microbadger.com/images/snakepacker/python:3.7) | target stage | pure python 3.7
+[3.6](https://docs.python.org/3/whatsnew/3.6.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.6.svg)](https://microbadger.com/images/snakepacker/python:3.6) | target stage | pure python 3.6
+[3.5](https://docs.python.org/3/whatsnew/3.5.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.5.svg)](https://microbadger.com/images/snakepacker/python:3.5) | target stage | pure python 3.5
+[3.4](https://docs.python.org/3/whatsnew/3.4.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.4.svg)](https://microbadger.com/images/snakepacker/python:3.4) | target stage | pure python 3.4
+[3.3](https://docs.python.org/3/whatsnew/3.3.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.3.svg)](https://microbadger.com/images/snakepacker/python:3.3) | target stage | pure python 3.3
+[3.2](https://docs.python.org/3/whatsnew/3.2.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.2.svg)](https://microbadger.com/images/snakepacker/python:3.2) | target stage | pure python 3.2
+[3.1](https://docs.python.org/3/whatsnew/3.1.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.1.svg)](https://microbadger.com/images/snakepacker/python:3.1) | target stage | pure python 3.1
+[2.7](https://docs.python.org/2/whatsnew/2.7.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.7.svg)](https://microbadger.com/images/snakepacker/python:2.7) | target stage | pure python 2.7
+[2.6](https://docs.python.org/2/whatsnew/2.6.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.6.svg)](https://microbadger.com/images/snakepacker/python:2.6) | target stage | pure python 2.6
+[2.5](https://docs.python.org/2/whatsnew/2.5.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.5.svg)](https://microbadger.com/images/snakepacker/python:2.5) | target stage | pure python 2.5
+[2.4](https://docs.python.org/2/whatsnew/2.4.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.4.svg)](https://microbadger.com/images/snakepacker/python:2.4) | target stage | pure python 2.4
+[2.3](https://docs.python.org/2/whatsnew/2.3.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.3.svg)](https://microbadger.com/images/snakepacker/python:2.3) | target stage | pure python 2.3
+[3.8-pillow](https://docs.python.org/3/whatsnew/3.8.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.8-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.8-pillow) | target stage | pure python 3.8 with graphics libraries binaries
+[3.9-pillow](https://docs.python.org/3/whatsnew/3.9.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.9-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.9-pillow) | target stage | pure python 3.9 with graphics libraries binaries
+[3.7-pillow](https://docs.python.org/3/whatsnew/3.7.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.7-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.7-pillow) | target stage | pure python 3.7 with graphics libraries binaries
+[3.6-pillow](https://docs.python.org/3/whatsnew/3.6.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.6-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.6-pillow) | target stage | pure python 3.6 with graphics libraries binaries
+[3.5-pillow](https://docs.python.org/3/whatsnew/3.5.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.5-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.5-pillow) | target stage | pure python 3.5 with graphics libraries binaries
+[3.4-pillow](https://docs.python.org/3/whatsnew/3.4.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.4-pillow.svg)](https://microbadger.com/images/snakepacker/python:3.4-pillow) | target stage | pure python 3.4 with graphics libraries binaries
+[2.7-pillow](https://docs.python.org/2/whatsnew/2.7.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:2.7-pillow.svg)](https://microbadger.com/images/snakepacker/python:2.7-pillow) | target stage | pure python 3.3 with graphics libraries binaries
+[pylama](https://pylama.readthedocs.io/en/latest/) | [![](https://images.microbadger.com/badges/image/snakepacker/python:pylama.svg)](https://microbadger.com/images/snakepacker/python:pylama) | ready to use | pylama application image (useful for drone.ci)
+[pylava](https://pylavadocs.readthedocs.io/en/latest/) | [![](https://images.microbadger.com/badges/image/snakepacker/python:pylava.svg)](https://microbadger.com/images/snakepacker/python:pylava) | ready to use | pylava application image (useful for drone.ci)
+[ipython](https://jupyter.org) | [![](https://images.microbadger.com/badges/image/snakepacker/python:ipython.svg)](https://microbadger.com/images/snakepacker/python:ipython) | ready to use | ipython application image
+[certbot](https://certbot.eff.org) | [![](https://images.microbadger.com/badges/image/snakepacker/python:certbot.svg)](https://microbadger.com/images/snakepacker/python:certbot) | ready to use | certbot application image
+base     | [![](https://images.microbadger.com/badges/image/snakepacker/python:base.svg)](https://microbadger.com/images/snakepacker/python:base) | |
 
 Concept
 -------
@@ -122,3 +122,40 @@ And just build this:
 ```bash
 docker build -t ipython .
 ```
+
+Useful tools
+------------
+
+All images contain ready to use and simple wrappers for easy image building.
+
+### apt-install
+
+Pretty simple bash script. The main purpose is removing the apt cache and temporary files after installation when you want to install something through apt-get install.
+
+Otherwise, you have to write something like this 
+
+```bash
+apt-get update && \
+apt-get install -y tcpdump && \
+rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
+```
+
+It might be replaced like this:
+```bash
+apt-install tcpdump
+```
+
+### wait-for-port
+
+Python script which waits for availability one or multiple TCP ports. It's very useful for tests and with docker-compose.
+
+```bash
+wait-for-port --period=0.5 --timeout=600 postgres:5432 pgbouncer:6432 && python myscript.py
+```
+Or shorter (values from previous example are defaults):
+```bash
+wait-for-port postgres:5432 pgbouncer:6432 && python myscript.py
+```
+
+This script will be trying to make connections to passed endpoints until timeout would be reached or endpoints stay connectable.
+
