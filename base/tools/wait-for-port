@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+import logging
+import socket
+from functools import partial
+from time import sleep
+from argparse import ArgumentParser
+
+
+parser = ArgumentParser()
+parser.add_argument('address', nargs='+')
+parser.add_argument('-t', '--timeout', default=600, type=int)
+parser.add_argument('--period', default=0.5, type=float)
+
+
+def check_port(host, port):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        return sock.connect_ex((host, port)) == 0
+    finally:
+        sock.close()
+
+
+def main():
+    arguments = parser.parse_args()
+
+    endpoints = set()
+    for service in arguments.address:
+        host, port = service.rsplit(":", 1)
+        port = int(port)
+        host = host.strip('[]').strip()
+
+        endpoints.add(partial(check_port, host, port))
+
+    for _ in range(int(arguments.timeout / arguments.period)):
+        result = list()
+
+        for checker in endpoints:
+            result.append(checker())
+
+        if all(result):
+            return 0
+
+        sleep(arguments.period)
+
+    logging.fatal("Service awaiting timeout")
+    return 10
+
+
+if __name__ == '__main__':
+    exit(main())

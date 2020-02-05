@@ -1,0 +1,5 @@
+#!/bin/bash
+
+apt-get update && \
+apt-get install -y "$@" && \
+rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
