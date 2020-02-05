@@ -40,6 +40,7 @@ RUN apt-get update && apt-get install -y python3.4 python3.4-dev && rm -fr /var/
 RUN apt-get update && apt-get install -y python3.5 python3.5-dev && rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
 RUN apt-get update && apt-get install -y python3.7 python3.7-dev python3.7-venv && rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
 RUN apt-get update && apt-get install -y python3.8 python3.8-dev python3.8-venv && rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
+RUN apt-get update && apt-get install -y python3.9 python3.9-dev python3.9-venv && rm -fr /var/lib/apt/lists /var/lib/cache/* /var/log/*
 
 RUN pip3 install tox coveralls && \
 	ln -snf /usr/local/bin/tox /usr/bin/tox && \

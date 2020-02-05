@@ -9,7 +9,9 @@ endef
 
 images: build-base \
 		build-all \
+		build-modern \
 		build-pillow-all \
+		build-pillow-modern \
 		build-python-2.3 \
 		build-python-2.4 \
 		build-python-2.5 \
@@ -23,18 +25,24 @@ images: build-base \
 		build-python-3.6 \
 		build-python-3.7 \
 		build-python-3.8 \
+		build-python-3.9 \
 		build-pillow-2.7 \
 		build-pillow-3.4 \
 		build-pillow-3.5 \
 		build-pillow-3.6 \
 		build-pillow-3.7 \
-		build-pillow-3.8
+		build-pillow-3.8 \
+		build-pillow-3.9
+	docker tag snakepacker/python:3.8 snakepacker/python:latest
 
 build-base:
 	$(call build,base,base)
 
 build-all: build-base
 	$(call build,all,all)
+
+build-modern: build-base
+	$(call build,modern,modern)
 
 build-python-2.3:
 	$(call build,python2.3,2.3)
@@ -75,8 +83,14 @@ build-python-3.7:
 build-python-3.8:
 	$(call build,python3.8,3.8)
 
+build-python-3.9:
+	$(call build,python3.9,3.9)
+
 build-pillow-all:
 	$(call build,pillow/all,all-pillow)
+
+build-pillow-modern:
+	$(call build,pillow/modern,modern-pillow)
 
 build-pillow-2.7:
 	$(call build,pillow/2.7,2.7-pillow)
@@ -96,10 +110,15 @@ build-pillow-3.7:
 build-pillow-3.8:
 	$(call build,pillow/3.8,3.8-pillow)
 
+build-pillow-3.9:
+	$(call build,pillow/3.9,3.9-pillow)
+
 publish: images
 	$(call publish,base)
 	$(call publish,all)
 	$(call publish,all-pillow)
+	$(call publish,modern)
+	$(call publish,modern-pillow)
 	$(call publish,2.3)
 	$(call publish,2.4)
 	$(call publish,2.5)
@@ -113,9 +132,12 @@ publish: images
 	$(call publish,3.6)
 	$(call publish,3.7)
 	$(call publish,3.8)
+	$(call publish,3.9)
 	$(call publish,2.7-pillow)
 	$(call publish,3.4-pillow)
 	$(call publish,3.5-pillow)
 	$(call publish,3.6-pillow)
 	$(call publish,3.7-pillow)
 	$(call publish,3.8-pillow)
+	$(call publish,3.9-pillow)
+	$(call publish,latest)
