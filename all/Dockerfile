@@ -22,6 +22,7 @@ RUN apt-install \
 
 RUN apt-install -y python2.7 python2.7-dev
 RUN apt-install -y python3.5 python3.5-dev python3.5-venv
+RUN apt-install -y python3.6 python3.6-dev python3.6-venv
 RUN apt-install -y python3.7 python3.7-dev python3.7-venv
 RUN apt-install -y python3.9 python3.9-dev python3.9-venv
 
