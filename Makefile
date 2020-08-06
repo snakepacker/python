@@ -29,6 +29,7 @@ build-base:
 
 build-all: build-base
 	$(call build,all,all)
+	docker tag snakepacker/python:all snakepacker/python:modern
 
 build-python-2.7:
 	$(call build,python2.7,2.7)
@@ -72,6 +73,7 @@ build-pillow-3.9:
 publish: images
 	$(call publish,base)
 	$(call publish,all)
+	$(call publish,modern)
 	$(call publish,all-pillow)
 	$(call publish,2.7)
 	$(call publish,3.5)

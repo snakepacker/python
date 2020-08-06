@@ -84,7 +84,7 @@ with the following content:
 # 1. All the Python versions
 # 2. required python headers
 # 3. C compiler and developer tools
-FROM snakepacker/python:modern as builder
+FROM snakepacker/python:all as builder
 
 # Create virtualenv on python 3.7
 # Target folder should be the same on the build stage and on the target stage
