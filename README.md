@@ -1,7 +1,7 @@
 A simple way to build a Python project
 ======================================
 
-![](logo.png)
+![](https://github.com/snakepacker/python/raw/master/logo.png)
 
 This repository provides and demonstrates a way to pack python package into a
 compact Docker image, based on modern
@@ -90,6 +90,9 @@ FROM snakepacker/python:modern as builder
 # Target folder should be the same on the build stage and on the target stage
 RUN python3.7 -m venv /usr/share/python3/app
 
+# Will be find required system libraries and their packages
+RUN find-libdeps /usr/share/python3/app > /usr/share/python3/app/pkgdeps.txt
+
 RUN /usr/share/python3/app/bin/pip install -U pip 'ipython[notebook]'
 
 #################################################################
@@ -100,6 +103,9 @@ FROM snakepacker/python:3.7
 
 # Copy virtualenv to the target image
 COPY --from=builder /usr/share/python3/app /usr/share/python3/app
+
+# Install the required library packages
+RUN cat /usr/share/python3/app/pkgdeps.txt | xargs apt-install
 
 # Create a symlink to the target binary (just for convenience)
 RUN ln -snf /usr/share/python3/app/bin/ipython /usr/bin/
@@ -147,4 +153,19 @@ wait-for-port postgres:5432 pgbouncer:6432 && python myscript.py
 ```
 
 This script will be trying to make connections to passed endpoints until timeout would be reached or endpoints stay connectable.
+
+
+### find-libdeps
+
+A shell script which find binary `*.so` files and resolve required system package for install library dependencies.
+
+Save required packages
+```bash
+find-libdeps /usr/share/python3/app > /usr/share/python3/app/pkgdeps.txt
+```
+
+Install saved packages
+```bash
+cat /usr/share/python3/app/pkgdeps.txt | xargs apt-install
+```
 
