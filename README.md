@@ -90,10 +90,11 @@ FROM snakepacker/python:all as builder
 # Target folder should be the same on the build stage and on the target stage
 RUN python3.7 -m venv /usr/share/python3/app
 
+# Install target package
+RUN /usr/share/python3/app/bin/pip install -U pip 'ipython[notebook]'
+
 # Will be find required system libraries and their packages
 RUN find-libdeps /usr/share/python3/app > /usr/share/python3/app/pkgdeps.txt
-
-RUN /usr/share/python3/app/bin/pip install -U pip 'ipython[notebook]'
 
 #################################################################
 ####################### TARGET STAGE ############################
