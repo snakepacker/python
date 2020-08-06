@@ -1,20 +1,17 @@
-FROM snakepacker/python:all as pillow-builder
-ADD https://github.com/ImageOptim/libimagequant/archive/2.12.2.tar.gz /tmp/libimagequant.tgz
-WORKDIR /tmp
-RUN tar -xvzf /tmp/libimagequant.tgz
-WORKDIR /tmp/libimagequant-2.12.2
-RUN make -j4
-RUN cp libimagequant.so* /usr/lib/
-RUN cp libimagequant.h /usr/include/
-
-################################################################################
 FROM snakepacker/python:all
-
 RUN apt-install \
-		libgif-dev \
-		libjpeg-dev \
-		libpng-dev \
-		libtiff-dev
-
-COPY --from=pillow-builder /usr/lib/libimagequant.so* /usr/lib/
-COPY --from=pillow-builder /usr/include/libimagequant.h /usr/include/
+	libfreetype6-dev \
+	libfribidi-dev \
+	libgif-dev \
+	libharfbuzz-dev \
+	libimagequant-dev \
+	libjpeg-dev \
+	libjpeg8-dev \
+	liblcms2-dev \
+	libopenjp2-7-dev \
+	libpng-dev \
+	libtiff-dev \
+	libtiff5-dev \
+	libwebp-dev \
+	libxcb1-dev \
+	zlib1g-dev

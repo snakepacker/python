@@ -1,10 +1,43 @@
 FROM snakepacker/python:3.6
 
 RUN apt-install \
+		gir1.2-glib-2.0 \
+		gir1.2-harfbuzz-0.0 \
+		libbsd0 \
+		libelf1 \
+		libexpat1 \
+		libfreetype6 \
+		libfribidi0 \
+		libgdbm-compat4 \
+		libgdbm6 \
 		libgif7 \
+		libgirepository-1.0-1 \
+		libglib2.0-0 \
+		libgraphite2-3 \
+		libharfbuzz-gobject0 \
+		libharfbuzz-icu0 \
+		libharfbuzz0b \
+		libicu66 \
+		libimagequant0 \
+		libjbig0 \
 		libjpeg-turbo8 \
 		libjpeg8 \
+		liblcms2-2 \
+		libmpdec2 \
+		libopenjp2-7 \
+		libpcre16-3 \
+		libpcre2-16-0 \
+		libpcre2-32-0 \
+		libpcre2-posix2 \
+		libpcre32-3 \
+		libpcrecpp0v5 \
+		libperl5.30 \
 		libpng16-16 \
-		libtiff5
-
-COPY --from=snakepacker/python:all-pillow /usr/lib/libimagequant.so* /usr/lib/
+		libtiff5 \
+		libtiffxx5 \
+		libwebp6 \
+		libwebpdemux2 \
+		libwebpmux3 \
+		libxau6 \
+		libxcb1 \
+		libxdmcp6
