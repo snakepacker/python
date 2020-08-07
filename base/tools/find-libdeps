@@ -1,0 +1,10 @@
+#!/bin/bash
+
+find $1 -iname '*.so' | \
+	xargs ldd 2>/dev/null | \
+	grep '=>' | \
+	awk '{print $1}' | \
+	sort -u | \
+	xargs dpkg-query -S 2>/dev/null | \
+	cut -d':' -f 1 | \
+	sort -u
