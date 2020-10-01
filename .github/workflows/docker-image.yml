@@ -260,7 +260,7 @@ jobs:
           docker tag ghcr.io/snakepacker/python/ipython snakepacker/python:ipython
           docker tag ghcr.io/snakepacker/python/pylava snakepacker/python:pylava
           docker tag ghcr.io/snakepacker/python/pylama snakepacker/python:pylama
-          docker tag ghcr.io/snakepacker/python/certbotsnakepacker/python:certbot
+          docker tag ghcr.io/snakepacker/python/certbot snakepacker/python:certbot
           docker push snakepacker/python:all
           docker push snakepacker/python:all-pillow
           docker push snakepacker/python:2.7
