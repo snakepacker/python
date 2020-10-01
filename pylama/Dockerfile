@@ -1,11 +1,11 @@
 #################################################################
-FROM snakepacker/python:all as pylama-builder
+FROM ghcr.io/snakepacker/python/all as pylama-builder
 
 RUN python3.6 -m venv /usr/share/python3/app
 RUN /usr/share/python3/app/bin/pip install -U 'pylama'
 
 ########################################################################
-FROM snakepacker/python:3.6
+FROM ghcr.io/snakepacker/python/3.6
 
 ENV LANG ru_RU.UTF-8
 

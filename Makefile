@@ -1,10 +1,12 @@
+REGISTRY ?= ''
+
 define build
-	docker pull snakepacker/python:$(2) || true
-	docker build -t snakepacker/python:$(2) $(1)
+	docker pull $(REGISTRY)snakepacker/python:$(2) || true
+	docker build -t $(REGISTRY)snakepacker/python:$(2) $(1)
 endef
 
 define publish
-	docker push snakepacker/python:$(1)
+	docker push $(REGISTRY)snakepacker/python:$(1)
 endef
 
 images: build-base \
@@ -22,14 +24,14 @@ images: build-base \
 		build-pillow-3.7 \
 		build-pillow-3.8 \
 		build-pillow-3.9
-	docker tag snakepacker/python:3.8 snakepacker/python:latest
+	docker tag $(REGISTRY)snakepacker/python:3.8 $(REGISTRY)snakepacker/python:latest
 
 build-base:
 	$(call build,base,base)
 
 build-all: build-base
 	$(call build,all,all)
-	docker tag snakepacker/python:all snakepacker/python:modern
+	docker tag $(REGISTRY)snakepacker/python:all $(REGISTRY)snakepacker/python:modern
 
 build-python-2.7:
 	$(call build,python2.7,2.7)

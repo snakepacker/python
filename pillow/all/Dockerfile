@@ -1,4 +1,4 @@
-FROM snakepacker/python:all
+FROM ghcr.io/snakepacker/python/all
 RUN apt-install \
 	libfreetype6-dev \
 	libfribidi-dev \

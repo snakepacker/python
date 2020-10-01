@@ -1,4 +1,4 @@
-FROM snakepacker/python:3.6
+FROM ghcr.io/snakepacker/python/3.6
 
 RUN apt-install \
 		gir1.2-glib-2.0 \

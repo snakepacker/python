@@ -1,4 +1,4 @@
-FROM snakepacker/python:base
+FROM ghcr.io/snakepacker/python/base
 
 ENV PYTHONDONTWRITEBYTECODE=True
 
