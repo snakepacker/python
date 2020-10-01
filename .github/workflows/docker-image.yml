@@ -264,6 +264,7 @@ jobs:
           docker tag ghcr.io/snakepacker/python/3.7 snakepacker/python:3.7
           docker tag ghcr.io/snakepacker/python/3.7:pillow snakepacker/python:3.7-pillow
           docker tag ghcr.io/snakepacker/python/3.8 snakepacker/python:3.8
+          docker tag ghcr.io/snakepacker/python/3.8 snakepacker/python:latest
           docker tag ghcr.io/snakepacker/python/3.8:pillow snakepacker/python:3.8-pillow
           docker tag ghcr.io/snakepacker/python/3.9 snakepacker/python:3.9
           docker tag ghcr.io/snakepacker/python/3.9:pillow snakepacker/python:3.9-pillow
@@ -318,6 +319,7 @@ jobs:
 
       - name: Push Docker Hub images
         run: |
+          docker push snakepacker/python:latest
           docker push snakepacker/python:all
           docker push snakepacker/python:all-pillow
           docker push snakepacker/python:2.7
