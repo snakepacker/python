@@ -36,6 +36,7 @@ jobs:
         docker pull ghcr.io/snakepacker/python/${{ matrix.image.name }} || true
         docker build -t ghcr.io/snakepacker/python/${{ matrix.image.name }} ${{ matrix.image.dir }}
         docker tag ghcr.io/snakepacker/python/${{ matrix.image.name }} snakepacker/python:${{ matrix.image.tag }}
+        docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
 
     - name: Pushing to ghcr.io ${{ matrix.image.name }}
       run: docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
@@ -93,6 +94,7 @@ jobs:
         docker pull ghcr.io/snakepacker/python/${{ matrix.image.name }} || true
         docker build -t ghcr.io/snakepacker/python/${{ matrix.image.name }} ${{ matrix.image.dir }}
         docker tag ghcr.io/snakepacker/python/${{ matrix.image.name }} snakepacker/python:${{ matrix.image.tag }}
+        docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
 
     - name: Pushing to ghcr.io ${{ matrix.image.name }}
       run: docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
@@ -149,6 +151,7 @@ jobs:
         docker pull ghcr.io/snakepacker/python/${{ matrix.image.name }} || true
         docker build -t ghcr.io/snakepacker/python/${{ matrix.image.name }} ${{ matrix.image.dir }}
         docker tag ghcr.io/snakepacker/python/${{ matrix.image.name }} snakepacker/python:${{ matrix.image.tag }}
+        docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
 
     - name: Pushing to ghcr.io ${{ matrix.image.name }}
       run: docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
@@ -195,6 +198,7 @@ jobs:
         docker pull ghcr.io/snakepacker/python/${{ matrix.image.name }} || true
         docker build -t ghcr.io/snakepacker/python/${{ matrix.image.name }} ${{ matrix.image.dir }}
         docker tag ghcr.io/snakepacker/python/${{ matrix.image.name }} snakepacker/python:${{ matrix.image.tag }}
+        docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
 
     - name: Pushing to ghcr.io ${{ matrix.image.name }}
       run: docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
@@ -219,38 +223,57 @@ jobs:
 
       - name: Push images
         run: |
-          docker push ghcr.io/snakepacker/python/base
-          docker push ghcr.io/snakepacker/python/all
-          docker push ghcr.io/snakepacker/python/all:pillow
-          docker push ghcr.io/snakepacker/python/2.7
-          docker push ghcr.io/snakepacker/python/3.5
-          docker push ghcr.io/snakepacker/python/3.6
-          docker push ghcr.io/snakepacker/python/3.7
-          docker push ghcr.io/snakepacker/python/3.8
-          docker push ghcr.io/snakepacker/python/3.9
-          docker push ghcr.io/snakepacker/python/2.7:pillow
-          docker push ghcr.io/snakepacker/python/3.5:pillow
-          docker push ghcr.io/snakepacker/python/3.6:pillow
-          docker push ghcr.io/snakepacker/python/3.7:pillow
-          docker push ghcr.io/snakepacker/python/3.8:pillow
-          docker push ghcr.io/snakepacker/python/3.9:pillow
-          docker push ghcr.io/snakepacker/python/ipython
-          docker push ghcr.io/snakepacker/python/pylava
-          docker push ghcr.io/snakepacker/python/pylama
-          docker push ghcr.io/snakepacker/python/certbot
+          docker pull ghcr.io/snakepacker/python/base
+          docker pull ghcr.io/snakepacker/python/all
+          docker pull ghcr.io/snakepacker/python/all:pillow
+          docker pull ghcr.io/snakepacker/python/2.7
+          docker pull ghcr.io/snakepacker/python/2.7:pillow
+          docker pull ghcr.io/snakepacker/python/3.5
+          docker pull ghcr.io/snakepacker/python/3.5:pillow
+          docker pull ghcr.io/snakepacker/python/3.6
+          docker pull ghcr.io/snakepacker/python/3.6:pillow
+          docker pull ghcr.io/snakepacker/python/3.7
+          docker pull ghcr.io/snakepacker/python/3.7:pillow
+          docker pull ghcr.io/snakepacker/python/3.8
+          docker pull ghcr.io/snakepacker/python/3.8:pillow
+          docker pull ghcr.io/snakepacker/python/3.9
+          docker pull ghcr.io/snakepacker/python/3.9:pillow
+          docker pull ghcr.io/snakepacker/python/ipython
+          docker pull ghcr.io/snakepacker/python/pylava
+          docker pull ghcr.io/snakepacker/python/pylama
+          docker pull ghcr.io/snakepacker/python/certbot
+          docker tag ghcr.io/snakepacker/python/base snakepacker/python:base
+          docker tag ghcr.io/snakepacker/python/all snakepacker/python:all
+          docker tag ghcr.io/snakepacker/python/all:pillow snakepacker/python:all-pillow
+          docker tag ghcr.io/snakepacker/python/2.7 snakepacker/python:2.7
+          docker tag ghcr.io/snakepacker/python/2.7:pillow snakepacker/python:2.7-pillow
+          docker tag ghcr.io/snakepacker/python/3.5 snakepacker/python:3.5
+          docker tag ghcr.io/snakepacker/python/3.5:pillow snakepacker/python:3.5-pillow
+          docker tag ghcr.io/snakepacker/python/3.6 snakepacker/python:3.6
+          docker tag ghcr.io/snakepacker/python/3.6:pillow snakepacker/python:3.6-pillow
+          docker tag ghcr.io/snakepacker/python/3.7 snakepacker/python:3.7
+          docker tag ghcr.io/snakepacker/python/3.7:pillow snakepacker/python:3.7-pillow
+          docker tag ghcr.io/snakepacker/python/3.8 snakepacker/python:3.8
+          docker tag ghcr.io/snakepacker/python/3.8:pillow snakepacker/python:3.8-pillow
+          docker tag ghcr.io/snakepacker/python/3.9 snakepacker/python:3.9
+          docker tag ghcr.io/snakepacker/python/3.9:pillow snakepacker/python:3.9-pillow
+          docker tag ghcr.io/snakepacker/python/ipython snakepacker/python:ipython
+          docker tag ghcr.io/snakepacker/python/pylava snakepacker/python:pylava
+          docker tag ghcr.io/snakepacker/python/pylama snakepacker/python:pylama
+          docker tag ghcr.io/snakepacker/python/certbotsnakepacker/python:certbot
           docker push snakepacker/python:all
           docker push snakepacker/python:all-pillow
           docker push snakepacker/python:2.7
-          docker push snakepacker/python:3.5
-          docker push snakepacker/python:3.6
-          docker push snakepacker/python:3.7
-          docker push snakepacker/python:3.8
-          docker push snakepacker/python:3.9
           docker push snakepacker/python:2.7-pillow
+          docker push snakepacker/python:3.5
           docker push snakepacker/python:3.5-pillow
+          docker push snakepacker/python:3.6
           docker push snakepacker/python:3.6-pillow
+          docker push snakepacker/python:3.7
           docker push snakepacker/python:3.7-pillow
+          docker push snakepacker/python:3.8
           docker push snakepacker/python:3.8-pillow
+          docker push snakepacker/python:3.9
           docker push snakepacker/python:3.9-pillow
           docker push snakepacker/python:ipython
           docker push snakepacker/python:pylava

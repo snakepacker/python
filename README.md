@@ -10,6 +10,7 @@ compact Docker image, based on modern
 Available images
 ----------------
 
+Docker Hub images
 Tag      | Info | Purpose | Features
  ------- | ---- | ------- | --------
 all      | [![](https://images.microbadger.com/badges/image/snakepacker/python:all.svg)](https://microbadger.com/images/snakepacker/python:all) | build stage | all available python versions, libpython headers and compiler
@@ -31,6 +32,8 @@ all-pillow | [![](https://images.microbadger.com/badges/image/snakepacker/python
 [ipython](https://jupyter.org) | [![](https://images.microbadger.com/badges/image/snakepacker/python:ipython.svg)](https://microbadger.com/images/snakepacker/python:ipython) | ready to use | ipython application image
 [certbot](https://certbot.eff.org) | [![](https://images.microbadger.com/badges/image/snakepacker/python:certbot.svg)](https://microbadger.com/images/snakepacker/python:certbot) | ready to use | certbot application image
 base     | [![](https://images.microbadger.com/badges/image/snakepacker/python:base.svg)](https://microbadger.com/images/snakepacker/python:base) | |
+
+
 
 Concept
 -------
