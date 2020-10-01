@@ -294,7 +294,7 @@ jobs:
           docker tag ghcr.io/snakepacker/python/pylama docker.pkg.github.com/snakepacker/python/pylama
           docker tag ghcr.io/snakepacker/python/certbot docker.pkg.github.com/snakepacker/python/certbot
 
-      - name: Push Docker Hub images
+      - name: Push Github Packages images
         run: |
           docker push docker.pkg.github.com/snakepacker/python/base
           docker push docker.pkg.github.com/snakepacker/python/all
