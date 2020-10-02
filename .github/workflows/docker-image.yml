@@ -5,6 +5,9 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  schedule:
+    - cron: "0 18 * * FRI"
+    - cron: "0 18 * * WED"
 
 jobs:
 
