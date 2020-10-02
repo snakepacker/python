@@ -29,7 +29,6 @@ RUN apt-install -y python3.9 python3.9-dev python3.9-venv && \
 	  /usr/lib/python3.9/_sysconfigdata__linux_x86_64-linux-gnu.py \
 	  /usr/lib/python3.9/_sysconfigdata__x86_64-linux-gnu.py
 
-
 RUN pip3 install tox coveralls && \
 	ln -snf /usr/local/bin/tox /usr/bin/tox && \
 	ln -snf /usr/local/bin/coveralls /usr/bin/coveralls && \
