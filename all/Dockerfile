@@ -24,10 +24,7 @@ RUN apt-install -y python2.7 python2.7-dev
 RUN apt-install -y python3.5 python3.5-dev python3.5-venv
 RUN apt-install -y python3.6 python3.6-dev python3.6-venv
 RUN apt-install -y python3.7 python3.7-dev python3.7-venv
-RUN apt-install -y python3.9 python3.9-dev python3.9-venv && \
-    ln -s \
-	  /usr/lib/python3.9/_sysconfigdata__linux_x86_64-linux-gnu.py \
-	  /usr/lib/python3.9/_sysconfigdata__x86_64-linux-gnu.py
+RUN apt-install -y python3.9 python3.9-dev python3.9-venv
 
 RUN pip3 install tox coveralls && \
 	ln -snf /usr/local/bin/tox /usr/bin/tox && \
