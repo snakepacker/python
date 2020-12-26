@@ -276,50 +276,6 @@ jobs:
           docker tag ghcr.io/snakepacker/python/pylama snakepacker/python:pylama
           docker tag ghcr.io/snakepacker/python/certbot snakepacker/python:certbot
 
-      - name: Tag Github Packages images
-        run: |
-          docker tag ghcr.io/snakepacker/python/base docker.pkg.github.com/snakepacker/python/base
-          docker tag ghcr.io/snakepacker/python/all docker.pkg.github.com/snakepacker/python/all
-          docker tag ghcr.io/snakepacker/python/all:pillow docker.pkg.github.com/snakepacker/python/all:pillow
-          docker tag ghcr.io/snakepacker/python/2.7 docker.pkg.github.com/snakepacker/python/2.7
-          docker tag ghcr.io/snakepacker/python/2.7:pillow docker.pkg.github.com/snakepacker/python/2.7:pillow
-          docker tag ghcr.io/snakepacker/python/3.5 docker.pkg.github.com/snakepacker/python/3.5
-          docker tag ghcr.io/snakepacker/python/3.5:pillow docker.pkg.github.com/snakepacker/python/3.5:pillow
-          docker tag ghcr.io/snakepacker/python/3.6 docker.pkg.github.com/snakepacker/python/3.6
-          docker tag ghcr.io/snakepacker/python/3.6:pillow docker.pkg.github.com/snakepacker/python/3.6:pillow
-          docker tag ghcr.io/snakepacker/python/3.7 docker.pkg.github.com/snakepacker/python/3.7
-          docker tag ghcr.io/snakepacker/python/3.7:pillow docker.pkg.github.com/snakepacker/python/3.7:pillow
-          docker tag ghcr.io/snakepacker/python/3.8 docker.pkg.github.com/snakepacker/python/3.8
-          docker tag ghcr.io/snakepacker/python/3.8:pillow docker.pkg.github.com/snakepacker/python/3.8:pillow
-          docker tag ghcr.io/snakepacker/python/3.9 docker.pkg.github.com/snakepacker/python/3.9
-          docker tag ghcr.io/snakepacker/python/3.9:pillow docker.pkg.github.com/snakepacker/python/3.9:pillow
-          docker tag ghcr.io/snakepacker/python/ipython docker.pkg.github.com/snakepacker/python/ipython
-          docker tag ghcr.io/snakepacker/python/pylava docker.pkg.github.com/snakepacker/python/pylava
-          docker tag ghcr.io/snakepacker/python/pylama docker.pkg.github.com/snakepacker/python/pylama
-          docker tag ghcr.io/snakepacker/python/certbot docker.pkg.github.com/snakepacker/python/certbot
-
-      - name: Push Github Packages images
-        run: |
-          docker push docker.pkg.github.com/snakepacker/python/base
-          docker push docker.pkg.github.com/snakepacker/python/all
-          docker push docker.pkg.github.com/snakepacker/python/all:pillow
-          docker push docker.pkg.github.com/snakepacker/python/2.7
-          docker push docker.pkg.github.com/snakepacker/python/2.7:pillow
-          docker push docker.pkg.github.com/snakepacker/python/3.5
-          docker push docker.pkg.github.com/snakepacker/python/3.5:pillow
-          docker push docker.pkg.github.com/snakepacker/python/3.6
-          docker push docker.pkg.github.com/snakepacker/python/3.6:pillow
-          docker push docker.pkg.github.com/snakepacker/python/3.7
-          docker push docker.pkg.github.com/snakepacker/python/3.7:pillow
-          docker push docker.pkg.github.com/snakepacker/python/3.8
-          docker push docker.pkg.github.com/snakepacker/python/3.8:pillow
-          docker push docker.pkg.github.com/snakepacker/python/3.9
-          docker push docker.pkg.github.com/snakepacker/python/3.9:pillow
-          docker push docker.pkg.github.com/snakepacker/python/ipython
-          docker push docker.pkg.github.com/snakepacker/python/pylava
-          docker push docker.pkg.github.com/snakepacker/python/pylama
-          docker push docker.pkg.github.com/snakepacker/python/certbot
-
       - name: Push Docker Hub images
         run: |
           docker push snakepacker/python:latest
