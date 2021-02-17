@@ -18,7 +18,7 @@ RUN apt-install \
 	python3-venv \
 	python3-virtualenv \
 	virtualenv && \
-	python3 /usr/share/python/get-pip.py
+	python3 /usr/share/python/get-pip.py "pip" "setuptools" "wheel"
 
 RUN apt-install -y python2.7 python2.7-dev
 RUN apt-install -y python3.5 python3.5-dev python3.5-venv
