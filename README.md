@@ -15,8 +15,8 @@ Tag      | Info | Purpose | Features
  ------- | ---- | ------- | --------
 all      | [![](https://images.microbadger.com/badges/image/snakepacker/python:all.svg)](https://microbadger.com/images/snakepacker/python:all) | build stage | all available python versions, libpython headers and compiler
 all-pillow | [![](https://images.microbadger.com/badges/image/snakepacker/python:all-pillow.svg)](https://microbadger.com/images/snakepacker/python:all-pillow) | build stage |  all available python versions, libpython headers, graphics libraries headers and compiler
-[3.10](https://docs.python.org/3/whatsnew/3.10.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.10.svg)](https://microbadger.com/images/snakepacker/python:3.10) | pure python 3.10
-[3.9](https://docs.python.org/3/whatsnew/3.9.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.9.svg)](https://microbadger.com/images/snakepacker/python:3.9) | pure python 3.9
+[3.10](https://docs.python.org/3/whatsnew/3.10.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.10.svg)](https://microbadger.com/images/snakepacker/python:3.10) | target stage | pure python 3.10
+[3.9](https://docs.python.org/3/whatsnew/3.9.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.9.svg)](https://microbadger.com/images/snakepacker/python:3.9) | target stage | pure python 3.9
 [3.8](https://docs.python.org/3/whatsnew/3.8.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.8.svg)](https://microbadger.com/images/snakepacker/python:3.8) | target stage | pure python 3.8
 [3.7](https://docs.python.org/3/whatsnew/3.7.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.7.svg)](https://microbadger.com/images/snakepacker/python:3.7) | target stage | pure python 3.7
 [3.6](https://docs.python.org/3/whatsnew/3.6.html) | [![](https://images.microbadger.com/badges/image/snakepacker/python:3.6.svg)](https://microbadger.com/images/snakepacker/python:3.6) | target stage | pure python 3.6
