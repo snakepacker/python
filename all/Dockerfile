@@ -4,12 +4,12 @@ ENV PYTHONDONTWRITEBYTECODE=True
 
 # Install headers for useful libraries
 RUN apt-install git-core build-essential libffi-dev
+RUN apt-install virtualenv python python-dev python-setuptools python-wheel-common
+
+ADD https://bootstrap.pypa.io/2.7/get-pip.py /usr/share/python/get-pip2.py
+RUN python /usr/share/python/get-pip2.py "pip < 21.0" "setuptools < 50.0" "wheel < 1.0"
 
 ADD https://bootstrap.pypa.io/get-pip.py /usr/share/python/get-pip.py
-
-RUN apt-install virtualenv python python-dev python-setuptools python-wheel-common && \
-	python /usr/share/python/get-pip.py
-
 RUN apt-install \
 	python3.8 \
 	python3.8-dev \
