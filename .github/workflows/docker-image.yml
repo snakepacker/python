@@ -82,6 +82,10 @@ jobs:
             name: 3.9:latest
             tag: 3.9
 
+          - dir: python3.10
+            name: 3.10:latest
+            tag: 3.10
+
     steps:
     - uses: actions/checkout@v2
 
@@ -134,6 +138,10 @@ jobs:
           - dir: pillow/3.9
             name: 3.9:pillow
             tag: 3.9-pillow
+
+          - dir: pillow/3.10
+            name: 3.10:pillow
+            tag: 3.10-pillow
 
           - dir: pillow/all
             name: all:pillow

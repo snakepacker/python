@@ -23,8 +23,9 @@ images: build-base \
 		build-pillow-3.6 \
 		build-pillow-3.7 \
 		build-pillow-3.8 \
-		build-pillow-3.9
-	docker tag $(REGISTRY)snakepacker/python:3.8 $(REGISTRY)snakepacker/python:latest
+		build-pillow-3.9 \
+		build-pillow-3.10
+	docker tag $(REGISTRY)snakepacker/python:3.9 $(REGISTRY)snakepacker/python:latest
 
 build-base:
 	$(call build,base,base)
@@ -51,6 +52,9 @@ build-python-3.8:
 build-python-3.9:
 	$(call build,python3.9,3.9)
 
+build-python-3.10:
+	$(call build,python3.10,3.10)
+
 build-pillow-all:
 	$(call build,pillow/all,all-pillow)
 
@@ -72,6 +76,9 @@ build-pillow-3.8:
 build-pillow-3.9:
 	$(call build,pillow/3.9,3.9-pillow)
 
+build-pillow-3.10:
+	$(call build,pillow/3.10,3.10-pillow)
+
 publish: images
 	$(call publish,base)
 	$(call publish,all)
@@ -83,10 +90,12 @@ publish: images
 	$(call publish,3.7)
 	$(call publish,3.8)
 	$(call publish,3.9)
+	$(call publish,3.10)
 	$(call publish,2.7-pillow)
 	$(call publish,3.5-pillow)
 	$(call publish,3.6-pillow)
 	$(call publish,3.7-pillow)
 	$(call publish,3.8-pillow)
 	$(call publish,3.9-pillow)
+	$(call publish,3.10-pillow)
 	$(call publish,latest)
