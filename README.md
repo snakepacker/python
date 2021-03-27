@@ -34,6 +34,8 @@ all-pillow | [![](https://images.microbadger.com/badges/image/snakepacker/python
 [pylava](https://pylavadocs.readthedocs.io/en/latest/) | [![](https://images.microbadger.com/badges/image/snakepacker/python:pylava.svg)](https://microbadger.com/images/snakepacker/python:pylava) | ready to use | pylava application image (useful for drone.ci)
 [ipython](https://jupyter.org) | [![](https://images.microbadger.com/badges/image/snakepacker/python:ipython.svg)](https://microbadger.com/images/snakepacker/python:ipython) | ready to use | ipython application image
 [certbot](https://certbot.eff.org) | [![](https://images.microbadger.com/badges/image/snakepacker/python:certbot.svg)](https://microbadger.com/images/snakepacker/python:certbot) | ready to use | certbot application image
+[black](https://black.readthedocs.io/en/stable/) | [![](https://images.microbadger.com/badges/image/snakepacker/python:black.svg)](https://microbadger.com/images/snakepacker/python:black) | ready to use | black application image (useful for drone.ci)
+[gray](https://github.com/dizballanze/gray) | [![](https://images.microbadger.com/badges/image/snakepacker/python:gray.svg)](https://microbadger.com/images/snakepacker/python:gray) | ready to use | gray application image (useful for drone.ci)
 base     | [![](https://images.microbadger.com/badges/image/snakepacker/python:base.svg)](https://microbadger.com/images/snakepacker/python:base) | |
 
 
