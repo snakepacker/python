@@ -194,6 +194,14 @@ jobs:
             name: certbot:latest
             tag: certbot
 
+          - dir: black
+            name: black:latest
+            tag: black
+
+          - dir: gray
+            name: gray:latest
+            tag: gray
+
     steps:
     - uses: actions/checkout@v2
 
@@ -261,6 +269,8 @@ jobs:
           docker pull ghcr.io/snakepacker/python/ipython
           docker pull ghcr.io/snakepacker/python/pylava
           docker pull ghcr.io/snakepacker/python/pylama
+          docker pull ghcr.io/snakepacker/python/black
+          docker pull ghcr.io/snakepacker/python/gray
           docker pull ghcr.io/snakepacker/python/certbot
 
       - name: Tag Docker Hub images
@@ -286,6 +296,8 @@ jobs:
           docker tag ghcr.io/snakepacker/python/ipython snakepacker/python:ipython
           docker tag ghcr.io/snakepacker/python/pylava snakepacker/python:pylava
           docker tag ghcr.io/snakepacker/python/pylama snakepacker/python:pylama
+          docker tag ghcr.io/snakepacker/python/black snakepacker/python:black
+          docker tag ghcr.io/snakepacker/python/gray snakepacker/python:gray
           docker tag ghcr.io/snakepacker/python/certbot snakepacker/python:certbot
 
       - name: Push Docker Hub images
@@ -310,4 +322,6 @@ jobs:
           docker push snakepacker/python:ipython
           docker push snakepacker/python:pylava
           docker push snakepacker/python:pylama
+          docker push snakepacker/python:black
+          docker push snakepacker/python:gray
           docker push snakepacker/python:certbot
