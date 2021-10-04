@@ -292,7 +292,7 @@ jobs:
           docker tag ghcr.io/snakepacker/python/3.9:pillow snakepacker/python:3.9-pillow
           docker tag ghcr.io/snakepacker/python/3.10 snakepacker/python:3.10
           docker tag ghcr.io/snakepacker/python/3.10:pillow snakepacker/python:3.10-pillow
-          docker tag ghcr.io/snakepacker/python/3.9 snakepacker/python:latest
+          docker tag ghcr.io/snakepacker/python/3.10 snakepacker/python:latest
           docker tag ghcr.io/snakepacker/python/ipython snakepacker/python:ipython
           docker tag ghcr.io/snakepacker/python/pylava snakepacker/python:pylava
           docker tag ghcr.io/snakepacker/python/pylama snakepacker/python:pylama
