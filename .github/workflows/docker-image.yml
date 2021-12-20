@@ -62,10 +62,6 @@ jobs:
             name: 2.7:latest
             tag: 2.7
 
-          - dir: python3.5
-            name: 3.5:latest
-            tag: 3.5
-
           - dir: python3.6
             name: 3.6:latest
             tag: 3.6
@@ -118,10 +114,6 @@ jobs:
           - dir: pillow/2.7
             name: 2.7:pillow
             tag: 2.7-pillow
-
-          - dir: pillow/3.5
-            name: 3.5:pillow
-            tag: 3.5-pillow
 
           - dir: pillow/3.6
             name: 3.6:pillow
@@ -234,13 +226,6 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.CR_PAT }}
 
-      - name: Login to GitHub Packages Registry
-        uses: docker/login-action@v1
-        with:
-          registry: docker.pkg.github.com
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.CR_PAT }}
-
       - name: Login to hub.docker.io Container Registry
         uses: docker/login-action@v1
         with:
@@ -254,8 +239,6 @@ jobs:
           docker pull ghcr.io/snakepacker/python/all:pillow
           docker pull ghcr.io/snakepacker/python/2.7
           docker pull ghcr.io/snakepacker/python/2.7:pillow
-          docker pull ghcr.io/snakepacker/python/3.5
-          docker pull ghcr.io/snakepacker/python/3.5:pillow
           docker pull ghcr.io/snakepacker/python/3.6
           docker pull ghcr.io/snakepacker/python/3.6:pillow
           docker pull ghcr.io/snakepacker/python/3.7
@@ -280,8 +263,6 @@ jobs:
           docker tag ghcr.io/snakepacker/python/all:pillow snakepacker/python:all-pillow
           docker tag ghcr.io/snakepacker/python/2.7 snakepacker/python:2.7
           docker tag ghcr.io/snakepacker/python/2.7:pillow snakepacker/python:2.7-pillow
-          docker tag ghcr.io/snakepacker/python/3.5 snakepacker/python:3.5
-          docker tag ghcr.io/snakepacker/python/3.5:pillow snakepacker/python:3.5-pillow
           docker tag ghcr.io/snakepacker/python/3.6 snakepacker/python:3.6
           docker tag ghcr.io/snakepacker/python/3.6:pillow snakepacker/python:3.6-pillow
           docker tag ghcr.io/snakepacker/python/3.7 snakepacker/python:3.7
@@ -307,8 +288,6 @@ jobs:
           docker push snakepacker/python:all-pillow
           docker push snakepacker/python:2.7
           docker push snakepacker/python:2.7-pillow
-          docker push snakepacker/python:3.5
-          docker push snakepacker/python:3.5-pillow
           docker push snakepacker/python:3.6
           docker push snakepacker/python:3.6-pillow
           docker push snakepacker/python:3.7
