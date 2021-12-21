@@ -53,7 +53,6 @@ RUN cache-wheel \
 	chardet \
 	colorama \
 	contextlib2 \
-	coveralls \
 	distlib \
 	distro \
 	html5lib \
@@ -69,12 +68,10 @@ RUN cache-wheel \
 	setuptools \
 	six \
 	toml \
-	tox \
 	urllib3 \
 	virtualenv \
 	webencodings \
-	wheel \
-	yarl
+	wheel
 
 ENV PIP_FIND_LINKS=/usr/share/python-wheels
 
