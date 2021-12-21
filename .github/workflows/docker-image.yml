@@ -161,7 +161,9 @@ jobs:
 
 
   apps:
-    needs: images
+    needs:
+      - images
+      - images-pillow
     runs-on: ubuntu-latest
 
     strategy:
@@ -215,7 +217,10 @@ jobs:
       run: docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
 
   push:
-    needs: apps
+    needs:
+      - images
+      - images-pillow
+      - apps
     runs-on: ubuntu-latest
 
     steps:
