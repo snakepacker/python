@@ -3,7 +3,7 @@ FROM ghcr.io/snakepacker/python/base
 ENV PYTHONDONTWRITEBYTECODE=True
 
 # Install headers for useful libraries
-RUN apt-install git-core build-essential libffi-dev
+RUN apt-install git-core build-essential libffi-dev libxml2-dev libxslt1-dev
 RUN apt-install virtualenv python python-dev python-setuptools python-wheel-common
 
 ADD https://bootstrap.pypa.io/pip/2.7/get-pip.py /usr/share/python/get-pip2.py
@@ -25,7 +25,36 @@ RUN apt-install -y python3.7 python3.7-dev python3.7-venv
 RUN apt-install -y python3.9 python3.9-dev python3.9-venv
 RUN apt-install -y python3.10 python3.10-dev python3.10-venv
 
-RUN python3.10 /usr/share/python/get-pip.py "pip" "setuptools" "wheel"
+RUN python3 /usr/share/python/get-pip.py "pip" "wheel"
+
+# Upgrade preinstalled wheels
+RUN pip wheel -w /usr/share/python-wheels \
+	CacheControl \
+	appdirs \
+	certifi \
+	chardet \
+	colorama \
+	contextlib2 \
+	coveralls \
+	distlib \
+	distro \
+	html5lib \
+	idna \
+	ipaddr \
+	lockfile \
+	msgpack \
+	pip \
+	progress \
+	pyparsing \
+	requests \
+	retrying \
+	setuptools \
+	six \
+	toml \
+	tox \
+	urllib3 \
+	webencodings \
+	wheel
 
 RUN pip3 install tox coveralls && \
 	ln -snf /usr/local/bin/tox /usr/bin/tox && \
