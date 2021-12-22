@@ -24,7 +24,7 @@ RUN apt-install -y python2.7 python2.7-dev
 RUN apt-install -y python3.6 python3.6-dev python3.6-venv
 RUN apt-install -y python3.7 python3.7-dev python3.7-venv
 RUN apt-install -y python3.9 python3.9-dev python3.9-venv
-RUN apt-install -y python3.10 python3.10-dev python3.10-venv
+RUN apt-install -y python3.10 python3.10-dev python3.10-venv python3.10-distutils
 
 RUN apt-install \
 	libffi-dev \
@@ -36,11 +36,11 @@ RUN apt-install \
 	libyaml-dev
 
 RUN \
-	python3.6 /usr/share/python/get-pip.py "pip" "wheel" "cython" && \
-	python3.7 /usr/share/python/get-pip.py "pip" "wheel" "cython" && \
-	python3.8 /usr/share/python/get-pip.py "pip" "wheel" "cython" && \
-	python3.9 /usr/share/python/get-pip.py "pip" "wheel" "cython" && \
-	python3.10 /usr/share/python/get-pip.py "pip" "wheel" "cython"
+	python3.6 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
+	python3.7 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
+	python3.8 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
+	python3.9 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
+	python3.10 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython"
 
 # Upgrade preinstalled wheels
 RUN rm -fr \
@@ -48,13 +48,18 @@ RUN rm -fr \
 	/usr/share/python-wheels/wheel*.whl \
 	/usr/share/python-wheels/setuptools*.whl \
 	&& python3 -m pip wheel --cache-dir /tmp/wheels -w /usr/share/python-wheels --no-binary=:all: \
-		pip wheel setuptools \
+		"pip==21.2.4" "wheel==0.37.0" "setuptools<60" \
 	&& rm -fr /tmp/wheels
 
-RUN pip3 install tox coveralls && \
-	ln -snf /usr/local/bin/tox /usr/bin/tox && \
-	ln -snf /usr/local/bin/coveralls /usr/bin/coveralls && \
-	chmod a+x /usr/bin/tox /usr/bin/coveralls
+RUN python3 -m venv /usr/share/python3/tox && \
+	/usr/share/python3/tox/bin/pip install tox && \
+	ln -snf /usr/share/python3/tox/bin/tox /usr/bin/tox && \
+	ln -snf /usr/share/python3/tox/bin/tox /usr/local/bin/tox
+
+RUN python3 -m venv /usr/share/python3/coveralls && \
+	/usr/share/python3/coveralls/bin/pip install coveralls && \
+	ln -snf /usr/share/python3/coveralls/bin/coveralls /usr/bin/coveralls && \
+	ln -snf /usr/share/python3/coveralls/bin/coveralls /usr/local/bin/coveralls
 
 ENV PIP_CONFIG_FILE /etc/pip.conf
 

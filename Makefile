@@ -6,7 +6,8 @@ define build
 endef
 
 define publish
-	docker push $(REGISTRY)snakepacker/python:$(1)
+	docker tag ghcr.io/snakepacker/python/$(1) snakepacker/python:$(1)
+	docker push snakepacker/python:$(1)
 endef
 
 images: build-base \
