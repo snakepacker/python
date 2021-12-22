@@ -1,4 +1,5 @@
 FROM ghcr.io/snakepacker/python/all
+
 RUN apt-install \
 	libfreetype6-dev \
 	libfribidi-dev \
@@ -15,5 +16,3 @@ RUN apt-install \
 	libwebp-dev \
 	libxcb1-dev \
 	zlib1g-dev
-
-RUN cache-wheel --no-binary=:all: Pillow Pillow-SIMD

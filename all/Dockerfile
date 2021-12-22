@@ -42,38 +42,14 @@ RUN \
 	python3.9 /usr/share/python/get-pip.py "pip" "wheel" "cython" && \
 	python3.10 /usr/share/python/get-pip.py "pip" "wheel" "cython"
 
-COPY cache-wheel /usr/local/sbin/cache-wheel
-RUN chmod a+x /usr/local/sbin/cache-wheel
-
 # Upgrade preinstalled wheels
-RUN cache-wheel \
-	appdirs \
-	CacheControl \
-	certifi \
-	chardet \
-	colorama \
-	contextlib2 \
-	distlib \
-	distro \
-	html5lib \
-	idna \
-	ipaddr \
-	lockfile \
-	msgpack \
-	pip \
-	progress \
-	pyparsing \
-	requests \
-	retrying \
-	setuptools \
-	six \
-	toml \
-	urllib3 \
-	virtualenv \
-	webencodings \
-	wheel
-
-ENV PIP_FIND_LINKS=/usr/share/python-wheels
+RUN rm -fr \
+	/usr/share/python-wheels/pip*.whl \
+	/usr/share/python-wheels/wheel*.whl \
+	/usr/share/python-wheels/setuptools*.whl \
+	&& python3 -m pip wheel --cache-dir /tmp/wheels -w /usr/share/python-wheels --no-binary=:all: \
+		pip wheel setuptools \
+	&& rm -fr /tmp/wheels
 
 RUN pip3 install tox coveralls && \
 	ln -snf /usr/local/bin/tox /usr/bin/tox && \

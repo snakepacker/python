@@ -1,8 +1,8 @@
 REGISTRY ?= ''
 
 define build
-	docker pull $(REGISTRY)snakepacker/python:$(2) || true
-	docker build -t $(REGISTRY)snakepacker/python:$(2) $(1)
+	docker pull ghcr.io/snakepacker/python/$(2) || true
+	docker build -t ghcr.io/snakepacker/python/$(2) $(1)
 endef
 
 define publish
@@ -22,15 +22,21 @@ images: build-base \
 		build-pillow-3.7 \
 		build-pillow-3.8 \
 		build-pillow-3.9 \
-		build-pillow-3.10
-	docker tag $(REGISTRY)snakepacker/python:3.9 $(REGISTRY)snakepacker/python:latest
+		build-pillow-3.10 \
+		build-ipython \
+		build-black \
+		build-certbot \
+		build-gray \
+		build-pylama \
+		build-pylava
+	docker tag ghcr.io/snakepacker/python/3.9 ghcr.io/snakepacker/python/latest
 
 build-base:
 	$(call build,base,base)
 
 build-all: build-base
 	$(call build,all,all)
-	docker tag $(REGISTRY)snakepacker/python:all $(REGISTRY)snakepacker/python:modern
+	docker tag ghcr.io/snakepacker/python/all ghcr.io/snakepacker/python/modern
 
 build-python-2.7:
 	$(call build,python2.7,2.7)
@@ -51,25 +57,43 @@ build-python-3.10:
 	$(call build,python3.10,3.10)
 
 build-pillow-all:
-	$(call build,pillow/all,all-pillow)
+	$(call build,pillow/all,pillow/all)
 
 build-pillow-2.7:
-	$(call build,pillow/2.7,2.7-pillow)
+	$(call build,pillow/2.7,pillow/2.7)
 
 build-pillow-3.6:
-	$(call build,pillow/3.6,3.6-pillow)
+	$(call build,pillow/3.6,pillow/3.6)
 
 build-pillow-3.7:
-	$(call build,pillow/3.7,3.7-pillow)
+	$(call build,pillow/3.7,pillow/3.7)
 
 build-pillow-3.8:
-	$(call build,pillow/3.8,3.8-pillow)
+	$(call build,pillow/3.8,pillow/3.8)
 
 build-pillow-3.9:
-	$(call build,pillow/3.9,3.9-pillow)
+	$(call build,pillow/3.9,pillow/3.9)
 
 build-pillow-3.10:
-	$(call build,pillow/3.10,3.10-pillow)
+	$(call build,pillow/3.10,pillow/3.10)
+
+build-black:
+	$(call build,black,app/black)
+
+build-certbot:
+	$(call build,certbot,app/certbot)
+
+build-gray:
+	$(call build,gray,app/gray)
+
+build-ipython:
+	$(call build,ipython,app/ipython)
+
+build-pylama:
+	$(call build,pylama,app/pylama)
+
+build-pylava:
+	$(call build,pylava,app/pylava)
 
 publish: images
 	$(call publish,base)

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-for version in 3.6 3.7 3.8 3.9 3.10
-do python${version} -m pip wheel --cache-dir /tmp/wheels -w /usr/share/python-wheels "$@" || exit $?
-done
-
-rm -fr /tmp/wheels
