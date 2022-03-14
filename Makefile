@@ -1,13 +1,34 @@
 REGISTRY ?= ''
 
 define build
-	docker pull ghcr.io/snakepacker/python/$(2) || true
-	docker build -t ghcr.io/snakepacker/python/$(2) $(1)
+	docker pull ghcr.io/snakepacker/python/$(2):arm64 || true
+	docker pull ghcr.io/snakepacker/python/$(2):amd64 || true
+	docker pull ghcr.io/snakepacker/python/$(2):armv7 || true
+	docker build --platform linux/amd64 -t ghcr.io/snakepacker/python/$(2):amd64 $(1)
+	docker build --platform linux/arm/v7 -t ghcr.io/snakepacker/python/$(2):armv7 $(1)
+	docker build --platform linux/arm64 -t ghcr.io/snakepacker/python/$(2):arm64 $(1)
 endef
 
 define publish
-	docker tag ghcr.io/snakepacker/python/$(1) snakepacker/python:$(1)
-	docker push snakepacker/python:$(1)
+    docker pull ghcr.io/snakepacker/python/$(1):arm64
+	docker pull ghcr.io/snakepacker/python/$(1):amd64
+	docker pull ghcr.io/snakepacker/python/$(1):armv7
+
+	docker tag ghcr.io/snakepacker/python/$(1):amd64 snakepacker/python:$(1)-amd64
+	docker tag ghcr.io/snakepacker/python/$(1):arm64 snakepacker/python:$(1)-arm64
+	docker tag ghcr.io/snakepacker/python/$(1):armv7 snakepacker/python:$(1)-armv7
+
+	docker push snakepacker/python:$(1)-amd64
+	docker push snakepacker/python:$(1)-arm64
+	docker push snakepacker/python:$(1)-armv7
+
+	docker manifest create \
+		snakepacker/python:$(1) \
+		--amend snakepacker/python:$(1)-amd64 \
+		--amend snakepacker/python:$(1)-armv7 \
+		--amend snakepacker/python:$(1)-arm64
+	
+	docker manifest push snakepacker/python:$(1)
 endef
 
 images: build-base \
@@ -30,14 +51,12 @@ images: build-base \
 		build-gray \
 		build-pylama \
 		build-pylava
-	docker tag ghcr.io/snakepacker/python/3.9 ghcr.io/snakepacker/python/latest
 
 build-base:
 	$(call build,base,base)
 
 build-all: build-base
 	$(call build,all,all)
-	docker tag ghcr.io/snakepacker/python/all ghcr.io/snakepacker/python/modern
 
 build-python-2.7:
 	$(call build,python2.7,2.7)
@@ -58,25 +77,25 @@ build-python-3.10:
 	$(call build,python3.10,3.10)
 
 build-pillow-all:
-	$(call build,pillow/all,pillow/all)
+	$(call build,all-pillow,all-pillow)
 
 build-pillow-2.7:
-	$(call build,pillow/2.7,pillow/2.7)
+	$(call build,2.7-pillow,2.7-pillow)
 
 build-pillow-3.6:
-	$(call build,pillow/3.6,pillow/3.6)
+	$(call build,3.6-pillow,3.6-pillow)
 
 build-pillow-3.7:
-	$(call build,pillow/3.7,pillow/3.7)
+	$(call build,3.7-pillow,3.7-pillow)
 
 build-pillow-3.8:
-	$(call build,pillow/3.8,pillow/3.8)
+	$(call build,3.8-pillow,3.8-pillow)
 
 build-pillow-3.9:
-	$(call build,pillow/3.9,pillow/3.9)
+	$(call build,3.9-pillow,3.9-pillow)
 
 build-pillow-3.10:
-	$(call build,pillow/3.10,pillow/3.10)
+	$(call build,3.10-pillow,3.10-pillow)
 
 build-black:
 	$(call build,black,app/black)
@@ -96,10 +115,9 @@ build-pylama:
 build-pylava:
 	$(call build,pylava,app/pylava)
 
-publish: images
+publish:
 	$(call publish,base)
 	$(call publish,all)
-	$(call publish,modern)
 	$(call publish,all-pillow)
 	$(call publish,2.7)
 	$(call publish,3.6)
@@ -113,4 +131,3 @@ publish: images
 	$(call publish,3.8-pillow)
 	$(call publish,3.9-pillow)
 	$(call publish,3.10-pillow)
-	$(call publish,latest)

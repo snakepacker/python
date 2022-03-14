@@ -20,210 +20,18 @@ jobs:
 
       matrix:
         image:
-          - dir: base
-            name: base:latest
-            tag: base
+          - tag: base
+            context: base
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Login to GitHub Container Registry
-      uses: docker/login-action@v1
-      with:
-        registry: ghcr.io
-        username: ${{ github.repository_owner }}
-        password: ${{ secrets.CR_PAT }}
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
 
-    - name: Build ${{ matrix.image.name }}
-      run: |
-        docker pull ghcr.io/snakepacker/python/${{ matrix.image.name }} || true
-        docker build -t ghcr.io/snakepacker/python/${{ matrix.image.name }} ${{ matrix.image.dir }}
-        docker tag ghcr.io/snakepacker/python/${{ matrix.image.name }} snakepacker/python:${{ matrix.image.tag }}
-        docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
 
-    - name: Pushing to ghcr.io ${{ matrix.image.name }}
-      run: docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
-
-  images:
-    needs: base
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-
-      matrix:
-        image:
-
-          - dir: all
-            name: all:latest
-            tag: all
-
-          - dir: python2.7
-            name: 2.7:latest
-            tag: 2.7
-
-          - dir: python3.6
-            name: 3.6:latest
-            tag: 3.6
-
-          - dir: python3.7
-            name: 3.7:latest
-            tag: 3.7
-
-          - dir: python3.8
-            name: 3.8:latest
-            tag: 3.8
-
-          - dir: python3.9
-            name: 3.9:latest
-            tag: 3.9
-
-          - dir: python3.10
-            name: 3.10:latest
-            tag: 3.10
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Login to GitHub Container Registry
-      uses: docker/login-action@v1
-      with:
-        registry: ghcr.io
-        username: ${{ github.repository_owner }}
-        password: ${{ secrets.CR_PAT }}
-
-    - name: Build ${{ matrix.image.name }}
-      run: |
-        docker pull ghcr.io/snakepacker/python/${{ matrix.image.name }} || true
-        docker build -t ghcr.io/snakepacker/python/${{ matrix.image.name }} ${{ matrix.image.dir }}
-        docker tag ghcr.io/snakepacker/python/${{ matrix.image.name }} snakepacker/python:${{ matrix.image.tag }}
-        docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
-
-    - name: Pushing to ghcr.io ${{ matrix.image.name }}
-      run: docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
-
-  images-pillow:
-    needs: images
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-
-      matrix:
-        image:
-          - dir: pillow/2.7
-            name: 2.7:pillow
-            tag: 2.7-pillow
-
-          - dir: pillow/3.6
-            name: 3.6:pillow
-            tag: 3.6-pillow
-
-          - dir: pillow/3.7
-            name: 3.7:pillow
-            tag: 3.7-pillow
-
-          - dir: pillow/3.8
-            name: 3.8:pillow
-            tag: 3.8-pillow
-
-          - dir: pillow/3.9
-            name: 3.9:pillow
-            tag: 3.9-pillow
-
-          - dir: pillow/3.10
-            name: 3.10:pillow
-            tag: 3.10-pillow
-
-          - dir: pillow/all
-            name: all:pillow
-            tag: all-pillow
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Login to GitHub Container Registry
-      uses: docker/login-action@v1
-      with:
-        registry: ghcr.io
-        username: ${{ github.repository_owner }}
-        password: ${{ secrets.CR_PAT }}
-
-    - name: Build ${{ matrix.image.name }}
-      run: |
-        docker pull ghcr.io/snakepacker/python/${{ matrix.image.name }} || true
-        docker build -t ghcr.io/snakepacker/python/${{ matrix.image.name }} ${{ matrix.image.dir }}
-        docker tag ghcr.io/snakepacker/python/${{ matrix.image.name }} snakepacker/python:${{ matrix.image.tag }}
-        docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
-
-    - name: Pushing to ghcr.io ${{ matrix.image.name }}
-      run: docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
-
-
-  apps:
-    needs:
-      - images
-      - images-pillow
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-
-      matrix:
-        image:
-
-          - dir: ipython
-            name: ipython:latest
-            tag: ipython
-
-          - dir: pylama
-            name: pylama:latest
-            tag: pylama
-
-          - dir: pylava
-            name: pylava:latest
-            tag: pylava
-
-          - dir: certbot
-            name: certbot:latest
-            tag: certbot
-
-          - dir: black
-            name: black:latest
-            tag: black
-
-          - dir: gray
-            name: gray:latest
-            tag: gray
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Login to GitHub Container Registry
-      uses: docker/login-action@v1
-      with:
-        registry: ghcr.io
-        username: ${{ github.repository_owner }}
-        password: ${{ secrets.CR_PAT }}
-
-    - name: Build ${{ matrix.image.name }}
-      run: |
-        docker pull ghcr.io/snakepacker/python/${{ matrix.image.name }} || true
-        docker build -t ghcr.io/snakepacker/python/${{ matrix.image.name }} ${{ matrix.image.dir }}
-        docker tag ghcr.io/snakepacker/python/${{ matrix.image.name }} snakepacker/python:${{ matrix.image.tag }}
-        docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
-
-    - name: Pushing to ghcr.io ${{ matrix.image.name }}
-      run: docker push ghcr.io/snakepacker/python/${{ matrix.image.name }}
-
-  push:
-    needs:
-      - images
-      - images-pillow
-      - apps
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
         with:
@@ -237,75 +45,175 @@ jobs:
           username: mosquito
           password: ${{ secrets.DH_TOKEN }}
 
-      - name: Pull images
-        run: |
-          docker pull ghcr.io/snakepacker/python/base
-          docker pull ghcr.io/snakepacker/python/all
-          docker pull ghcr.io/snakepacker/python/all:pillow
-          docker pull ghcr.io/snakepacker/python/2.7
-          docker pull ghcr.io/snakepacker/python/2.7:pillow
-          docker pull ghcr.io/snakepacker/python/3.6
-          docker pull ghcr.io/snakepacker/python/3.6:pillow
-          docker pull ghcr.io/snakepacker/python/3.7
-          docker pull ghcr.io/snakepacker/python/3.7:pillow
-          docker pull ghcr.io/snakepacker/python/3.8
-          docker pull ghcr.io/snakepacker/python/3.8:pillow
-          docker pull ghcr.io/snakepacker/python/3.9
-          docker pull ghcr.io/snakepacker/python/3.9:pillow
-          docker pull ghcr.io/snakepacker/python/3.10
-          docker pull ghcr.io/snakepacker/python/3.10:pillow
-          docker pull ghcr.io/snakepacker/python/ipython
-          docker pull ghcr.io/snakepacker/python/pylava
-          docker pull ghcr.io/snakepacker/python/pylama
-          docker pull ghcr.io/snakepacker/python/black
-          docker pull ghcr.io/snakepacker/python/gray
-          docker pull ghcr.io/snakepacker/python/certbot
+      - uses: docker/build-push-action@v2
+        with:
+          context: ${{ matrix.image.context }}
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          push: true
+          pull: true
+          tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
 
-      - name: Tag Docker Hub images
-        run: |
-          docker tag ghcr.io/snakepacker/python/base snakepacker/python:base
-          docker tag ghcr.io/snakepacker/python/all snakepacker/python:all
-          docker tag ghcr.io/snakepacker/python/all:pillow snakepacker/python:all-pillow
-          docker tag ghcr.io/snakepacker/python/2.7 snakepacker/python:2.7
-          docker tag ghcr.io/snakepacker/python/2.7:pillow snakepacker/python:2.7-pillow
-          docker tag ghcr.io/snakepacker/python/3.6 snakepacker/python:3.6
-          docker tag ghcr.io/snakepacker/python/3.6:pillow snakepacker/python:3.6-pillow
-          docker tag ghcr.io/snakepacker/python/3.7 snakepacker/python:3.7
-          docker tag ghcr.io/snakepacker/python/3.7:pillow snakepacker/python:3.7-pillow
-          docker tag ghcr.io/snakepacker/python/3.8 snakepacker/python:3.8
-          docker tag ghcr.io/snakepacker/python/3.8:pillow snakepacker/python:3.8-pillow
-          docker tag ghcr.io/snakepacker/python/3.9 snakepacker/python:3.9
-          docker tag ghcr.io/snakepacker/python/3.9:pillow snakepacker/python:3.9-pillow
-          docker tag ghcr.io/snakepacker/python/3.10 snakepacker/python:3.10
-          docker tag ghcr.io/snakepacker/python/3.10:pillow snakepacker/python:3.10-pillow
-          docker tag ghcr.io/snakepacker/python/3.10 snakepacker/python:latest
-          docker tag ghcr.io/snakepacker/python/ipython snakepacker/python:ipython
-          docker tag ghcr.io/snakepacker/python/pylava snakepacker/python:pylava
-          docker tag ghcr.io/snakepacker/python/pylama snakepacker/python:pylama
-          docker tag ghcr.io/snakepacker/python/black snakepacker/python:black
-          docker tag ghcr.io/snakepacker/python/gray snakepacker/python:gray
-          docker tag ghcr.io/snakepacker/python/certbot snakepacker/python:certbot
 
-      - name: Push Docker Hub images
-        run: |
-          docker push snakepacker/python:latest
-          docker push snakepacker/python:all
-          docker push snakepacker/python:all-pillow
-          docker push snakepacker/python:2.7
-          docker push snakepacker/python:2.7-pillow
-          docker push snakepacker/python:3.6
-          docker push snakepacker/python:3.6-pillow
-          docker push snakepacker/python:3.7
-          docker push snakepacker/python:3.7-pillow
-          docker push snakepacker/python:3.8
-          docker push snakepacker/python:3.8-pillow
-          docker push snakepacker/python:3.9
-          docker push snakepacker/python:3.9-pillow
-          docker push snakepacker/python:3.10
-          docker push snakepacker/python:3.10-pillow
-          docker push snakepacker/python:ipython
-          docker push snakepacker/python:pylava
-          docker push snakepacker/python:pylama
-          docker push snakepacker/python:black
-          docker push snakepacker/python:gray
-          docker push snakepacker/python:certbot
+  images:
+    needs: base
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        image:
+          - context: "all"
+            tag: "all"
+          - context: "python2.7"
+            tag: "2.7"
+          - context: "python3.6"
+            tag: "3.6"
+          - context: "python3.7"
+            tag: "3.7"
+          - context: "python3.8"
+            tag: "3.8"
+          - context: "python3.9"
+            tag: "3.9"
+          - context: "python3.10"
+            tag: "3.10"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+
+      - name: Login to hub.docker.io Container Registry
+        uses: docker/login-action@v1
+        with:
+          username: mosquito
+          password: ${{ secrets.DH_TOKEN }}
+
+      - uses: docker/build-push-action@v2
+        with:
+          context: ${{ matrix.image.context }}
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          push: true
+          pull: true
+          tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
+
+
+  images-pillow:
+    needs: images
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        image:
+          - context: pillow/2.7
+            tag: 2.7-pillow
+          - context: pillow/3.6
+            tag: 3.6-pillow
+          - context: pillow/3.7
+            tag: 3.7-pillow
+          - context: pillow/3.8
+            tag: 3.8-pillow
+          - context: pillow/3.9
+            tag: 3.9-pillow
+          - context: pillow/3.10
+            tag: 3.10-pillow
+          - context: pillow/all
+            tag: all-pillow
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+
+      - name: Login to hub.docker.io Container Registry
+        uses: docker/login-action@v1
+        with:
+          username: mosquito
+          password: ${{ secrets.DH_TOKEN }}
+
+      - uses: docker/build-push-action@v2
+        with:
+          context: ${{ matrix.image.context }}
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          push: true
+          pull: true
+          tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
+
+
+  apps:
+    needs:
+      - images
+      - images-pillow
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        image:
+          - context: ipython
+            tag: ipython
+          - context: pylama
+            tag: pylama
+          - context: pylava
+            tag: pylava
+          - context: certbot
+            tag: certbot
+          - context: black
+            tag: black
+          - context: gray
+            tag: gray
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+
+      - name: Login to hub.docker.io Container Registry
+        uses: docker/login-action@v1
+        with:
+          username: mosquito
+          password: ${{ secrets.DH_TOKEN }}
+
+      - uses: docker/build-push-action@v2
+        with:
+          context: ${{ matrix.image.context }}
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          push: true
+          pull: true
+          tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}

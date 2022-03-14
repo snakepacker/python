@@ -1,5 +1,13 @@
-deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ focal-proposed main restricted universe multiverse
-deb http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+# AMD64 repos
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal-proposed main restricted universe multiverse
+deb [arch=amd64] http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+
+# ARMv7 and ARM64 repos
+deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports focal main restricted universe multiverse
+deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports focal-backports main restricted universe multiverse
+deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports focal-updates main restricted universe multiverse
+deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports focal-proposed main restricted universe multiverse
+deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports focal-security main restricted universe multiverse

@@ -10,6 +10,7 @@ ADD https://bootstrap.pypa.io/pip/2.7/get-pip.py /usr/share/python/get-pip2.py
 RUN python /usr/share/python/get-pip2.py "pip < 21.0" "setuptools < 50.0" "wheel < 1.0"
 RUN python2 -m pip wheel -w /usr/share/python-wheels "pip<21.0" "setuptools<50.0" "wheel<1.0"
 
+ADD https://bootstrap.pypa.io/pip/3.6/get-pip.py /usr/share/python/get-pip-3.6.py
 ADD https://bootstrap.pypa.io/get-pip.py /usr/share/python/get-pip.py
 RUN apt-install \
 	python3.8 \
@@ -36,7 +37,7 @@ RUN apt-install \
 	libyaml-dev
 
 RUN \
-	python3.6 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
+	python3.6 /usr/share/python/get-pip-3.6.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
 	python3.7 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
 	python3.8 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
 	python3.9 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
