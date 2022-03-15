@@ -53,6 +53,7 @@ jobs:
           cache-to: type=gha,mode=max
           push: true
           pull: true
+          shm-size: 4G
           tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
 
 
@@ -110,6 +111,7 @@ jobs:
           cache-to: type=gha,mode=max
           push: true
           pull: true
+          shm-size: 4G
           tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
 
 
@@ -167,6 +169,7 @@ jobs:
           cache-to: type=gha,mode=max
           push: true
           pull: true
+          shm-size: 4G
           tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
 
 
@@ -224,4 +227,5 @@ jobs:
           cache-to: type=gha,mode=max
           push: true
           pull: true
+          shm-size: 4G
           tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}

@@ -38,6 +38,9 @@ RUN apt-install \
 	libyaml-dev \
 	rustc
 
+# No create cargo cache and fixing the armv7 builds
+RUN ln -snf /dev/shm /root/.cargo
+
 RUN \
 	python3.6 /usr/share/python/get-pip-3.6.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
 	python3.7 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
