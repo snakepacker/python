@@ -28,13 +28,15 @@ RUN apt-install -y python3.9 python3.9-dev python3.9-venv
 RUN apt-install -y python3.10 python3.10-dev python3.10-venv python3.10-distutils
 
 RUN apt-install \
+	cargo \
 	libffi-dev \
 	libmysqlclient-dev \
 	libpq-dev \
 	libssl-dev \
 	libxml2-dev \
 	libxslt1-dev \
-	libyaml-dev
+	libyaml-dev \
+	rustc
 
 RUN \
 	python3.6 /usr/share/python/get-pip-3.6.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \

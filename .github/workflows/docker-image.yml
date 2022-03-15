@@ -49,8 +49,8 @@ jobs:
         with:
           context: ${{ matrix.image.context }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          cache-from: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
-          cache-to: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
+          # cache-from: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
+          # cache-to: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
           push: true
           pull: true
           tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
@@ -106,8 +106,8 @@ jobs:
         with:
           context: ${{ matrix.image.context }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          cache-from: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
-          cache-to: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
+          # cache-from: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
+          # cache-to: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
           push: true
           pull: true
           tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
@@ -163,8 +163,8 @@ jobs:
         with:
           context: ${{ matrix.image.context }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          cache-from: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
-          cache-to: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
+          # cache-from: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
+          # cache-to: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
           push: true
           pull: true
           tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
@@ -220,8 +220,8 @@ jobs:
         with:
           context: ${{ matrix.image.context }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          cache-from: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
-          cache-to: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
+          # cache-from: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
+          # cache-to: type=registry,ref=ghcr.io/snakepacker/python/${{ matrix.image.tag }}
           push: true
           pull: true
           tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
