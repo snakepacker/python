@@ -1,34 +1,9 @@
 REGISTRY ?= ''
 
 define build
-	docker pull ghcr.io/snakepacker/python/$(2):arm64 || true
-	docker pull ghcr.io/snakepacker/python/$(2):amd64 || true
-	docker pull ghcr.io/snakepacker/python/$(2):armv7 || true
 	docker build --platform linux/amd64 -t ghcr.io/snakepacker/python/$(2):amd64 $(1)
 	docker build --platform linux/arm/v7 -t ghcr.io/snakepacker/python/$(2):armv7 $(1)
 	docker build --platform linux/arm64 -t ghcr.io/snakepacker/python/$(2):arm64 $(1)
-endef
-
-define publish
-    docker pull ghcr.io/snakepacker/python/$(1):arm64
-	docker pull ghcr.io/snakepacker/python/$(1):amd64
-	docker pull ghcr.io/snakepacker/python/$(1):armv7
-
-	docker tag ghcr.io/snakepacker/python/$(1):amd64 snakepacker/python:$(1)-amd64
-	docker tag ghcr.io/snakepacker/python/$(1):arm64 snakepacker/python:$(1)-arm64
-	docker tag ghcr.io/snakepacker/python/$(1):armv7 snakepacker/python:$(1)-armv7
-
-	docker push snakepacker/python:$(1)-amd64
-	docker push snakepacker/python:$(1)-arm64
-	docker push snakepacker/python:$(1)-armv7
-
-	docker manifest create \
-		snakepacker/python:$(1) \
-		--amend snakepacker/python:$(1)-amd64 \
-		--amend snakepacker/python:$(1)-armv7 \
-		--amend snakepacker/python:$(1)-arm64
-	
-	docker manifest push snakepacker/python:$(1)
 endef
 
 images: build-base \

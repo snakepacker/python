@@ -13,6 +13,9 @@ RUN python3.10 -m venv /usr/share/python3/app
 
 RUN /usr/share/python3/app/bin/pip install -U pip 'ipython[notebook]'
 
+# Will be find required system libraries and their packages
+RUN find-libdeps /usr/share/python3/app > /usr/share/python3/app/pkgdeps.txt
+
 #################################################################
 ####################### TARGET STAGE ############################
 #################################################################
@@ -24,5 +27,8 @@ COPY --from=builder /usr/share/python3/app /usr/share/python3/app
 
 # Creating a symlink to the target binary (just for convenience)
 RUN ln -snf /usr/share/python3/app/bin/ipython /usr/bin/
+
+# Install the required library packages
+RUN xargs -ra /usr/share/python3/app/pkgdeps.txt apt-install
 
 CMD ["ipython"]

@@ -112,7 +112,7 @@ FROM snakepacker/python:3.7
 COPY --from=builder /usr/share/python3/app /usr/share/python3/app
 
 # Install the required library packages
-RUN cat /usr/share/python3/app/pkgdeps.txt | xargs apt-install
+RUN xargs -ra /usr/share/python3/app/pkgdeps.txt apt-install
 
 # Create a symlink to the target binary (just for convenience)
 RUN ln -snf /usr/share/python3/app/bin/ipython /usr/bin/
@@ -173,6 +173,6 @@ find-libdeps /usr/share/python3/app > /usr/share/python3/app/pkgdeps.txt
 
 Install saved packages
 ```bash
-cat /usr/share/python3/app/pkgdeps.txt | xargs apt-install
+xargs -ra /usr/share/python3/app/pkgdeps.txt apt-install
 ```
 
