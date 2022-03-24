@@ -114,8 +114,8 @@ COPY --from=builder /usr/share/python3/app /usr/share/python3/app
 # Install the required library packages
 RUN xargs -ra /usr/share/python3/app/pkgdeps.txt apt-install
 
-# Create a symlink to the target binary (just for convenience)
-RUN ln -snf /usr/share/python3/app/bin/ipython /usr/bin/
+# Add entrypoints from the venv to PATH (e.g. 'pip', 'python', just for convenience)
+ENV PATH="/usr/share/python3/app/bin:${PATH}"
 
 CMD ["ipython"]
 ```
