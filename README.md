@@ -115,7 +115,7 @@ COPY --from=builder /usr/share/python3/app /usr/share/python3/app
 RUN xargs -ra /usr/share/python3/app/pkgdeps.txt apt-install
 
 # Add entrypoints from the venv to PATH (e.g. 'pip', 'python', just for convenience)
-ENV PATH="/usr/share/python3/app/bin:${PATH}"
+ENV PATH="${PATH}:/usr/share/python3/app/bin"
 
 CMD ["ipython"]
 ```
