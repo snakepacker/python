@@ -5,7 +5,7 @@ A simple way to build a Python project
 
 This repository provides and demonstrates a way to pack python package into a
 compact Docker image, based on modern
-[Ubuntu Jammy](https://releases.ubuntu.com/jammy/) operation system.
+[Ubuntu Focal](https://releases.ubuntu.com/focal/) operation system.
 
 Available images
 ----------------

@@ -1,9 +1,7 @@
 REGISTRY ?= ''
 
 define build
-	docker build --platform linux/amd64 -t ghcr.io/snakepacker/python/$(2):amd64 $(1)
-	docker build --platform linux/arm/v7 -t ghcr.io/snakepacker/python/$(2):armv7 $(1)
-	docker build --platform linux/arm64 -t ghcr.io/snakepacker/python/$(2):arm64 $(1)
+	docker buildx build --platform linux/arm/v7,linux/arm64/v8,linux/amd64 --tag ghcr.io/snakepacker/python/$(2):amd64 $(1)
 endef
 
 images: build-base \

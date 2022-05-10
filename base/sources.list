@@ -1,13 +1,13 @@
 # AMD64 repos
-deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
-deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ jammy-backports main restricted universe multiverse
-deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
-deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ jammy-proposed main restricted universe multiverse
-deb [arch=amd64] http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal-proposed main restricted universe multiverse
+deb [arch=amd64] http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
 
 # ARMv7 and ARM64 repos
-deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports jammy main restricted universe multiverse
-deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports jammy-backports main restricted universe multiverse
-deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports jammy-updates main restricted universe multiverse
-deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports jammy-proposed main restricted universe multiverse
-deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports jammy-security main restricted universe multiverse
+deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports focal main restricted universe multiverse
+deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports focal-backports main restricted universe multiverse
+deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports focal-updates main restricted universe multiverse
+deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports focal-proposed main restricted universe multiverse
+deb [arch=armhf,arm64] http://ports.ubuntu.com/ubuntu-ports focal-security main restricted universe multiverse
