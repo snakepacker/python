@@ -5,7 +5,7 @@ A simple way to build a Python project
 
 This repository provides and demonstrates a way to pack python package into a
 compact Docker image, based on modern
-[Ubuntu Focal](https://releases.ubuntu.com/focal/) operation system.
+[Ubuntu Jammy](https://releases.ubuntu.com/jammy/) operation system.
 
 Available images
 ----------------
@@ -20,14 +20,10 @@ all-pillow | ![](https://flat.badgen.net/docker/size/snakepacker/python/all-pill
 [3.9](https://docs.python.org/3/whatsnew/3.9.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.9/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/3.9/amd64?label=layers) | target stage | pure python 3.9
 [3.8](https://docs.python.org/3/whatsnew/3.8.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.8/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/3.8/amd64?label=layers) | target stage | pure python 3.8
 [3.7](https://docs.python.org/3/whatsnew/3.7.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.7/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/3.7/amd64?label=layers) | target stage | pure python 3.7
-[3.6](https://docs.python.org/3/whatsnew/3.6.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.6/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/3.6/amd64?label=layers) | target stage | pure python 3.6
-[2.7](https://docs.python.org/2/whatsnew/2.7.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/2.7/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/2.7/amd64?label=layers) | target stage | pure python 2.7
 [3.10-pillow](https://docs.python.org/3/whatsnew/3.10.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.10-pillow/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/3.10-pillow/amd64?label=layers) | target stage | pure python 3.10 with graphics libraries binaries
 [3.9-pillow](https://docs.python.org/3/whatsnew/3.9.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.9-pillow/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/3.9-pillow/amd64?label=layers) | target stage | pure python 3.9 with graphics libraries binaries
 [3.8-pillow](https://docs.python.org/3/whatsnew/3.8.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.8-pillow/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/3.8-pillow/amd64?label=layers) | target stage | pure python 3.8 with graphics libraries binaries
 [3.7-pillow](https://docs.python.org/3/whatsnew/3.7.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.7-pillow/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/3.7-pillow/amd64?label=layers) | target stage | pure python 3.7 with graphics libraries binaries
-[3.6-pillow](https://docs.python.org/3/whatsnew/3.6.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.6-pillow/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/3.6-pillow/amd64?label=layers) | target stage | pure python 3.6 with graphics libraries binaries
-[2.7-pillow](https://docs.python.org/2/whatsnew/2.7.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/2.7-pillow/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/2.7-pillow/amd64?label=layers) | target stage | pure python 3.3 with graphics libraries binaries
 [pylama](https://pylama.readthedocs.io/en/latest/) | ![](https://flat.badgen.net/docker/size/snakepacker/python/pylama/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/pylama/amd64?label=layers) | ready to use | pylama application image (useful for drone.ci)
 [pylava](https://pylavadocs.readthedocs.io/en/latest/) | ![](https://flat.badgen.net/docker/size/snakepacker/python/pylava/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/pylava/amd64?label=layers) | ready to use | pylava application image (useful for drone.ci)
 [ipython](https://jupyter.org) | ![](https://flat.badgen.net/docker/size/snakepacker/python/ipython/amd64?label=size) ![](https://flat.badgen.net/docker/layers/snakepacker/python/ipython/amd64?label=layers) | ready to use | ipython application image
