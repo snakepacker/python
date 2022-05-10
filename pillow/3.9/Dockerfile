@@ -1,43 +1,30 @@
-FROM ghcr.io/snakepacker/python/3.9
+FROM ghcr.io/snakepacker/python/all as builder
 
+# https://pillow.readthedocs.io/en/stable/installation.html#building-from-source
 RUN apt-install \
-		gir1.2-glib-2.0 \
-		gir1.2-harfbuzz-0.0 \
-		libbsd0 \
-		libelf1 \
-		libexpat1 \
-		libfreetype6 \
-		libfribidi0 \
-		libgdbm-compat4 \
-		libgdbm6 \
-		libgif7 \
-		libgirepository-1.0-1 \
-		libglib2.0-0 \
-		libgraphite2-3 \
-		libharfbuzz-gobject0 \
-		libharfbuzz-icu0 \
-		libharfbuzz0b \
-		libicu70 \
-		libimagequant0 \
-		libjbig0 \
-		libjpeg-turbo8 \
-		libjpeg8 \
-		liblcms2-2 \
-		libmpdec3 \
-		libopenjp2-7 \
-		libpcre16-3 \
-		libpcre2-16-0 \
-		libpcre2-32-0 \
-		libpcre2-posix3 \
-		libpcre32-3 \
-		libpcrecpp0v5 \
-		libperl5.34 \
-		libpng16-16 \
-		libtiff5 \
-		libtiffxx5 \
-		libwebp7 \
-		libwebpdemux2 \
-		libwebpmux3 \
-		libxau6 \
-		libxcb1 \
-		libxdmcp6
+	libfreetype6-dev \
+	libfribidi-dev \
+	libgif-dev \
+	libharfbuzz-dev \
+	libimagequant-dev \
+	libjpeg-dev \
+	libjpeg8-dev \
+	liblcms2-dev \
+	libopenjp2-7-dev \
+	libpng-dev \
+	libraqm-dev \
+	libtiff-dev \
+	libtiff5-dev \
+	libwebp-dev \
+	libxcb1-dev \
+	zlib1g-dev
+
+RUN python3 -m venv /var/tmp/pillow-venv
+RUN /var/tmp/pillow-venv/bin/pip install --no-binary=:all: pillow
+RUN find-libdeps /usr/share/python3/app > /usr/share/python3/pillow-runtime-libs.txt
+
+############################################################################
+
+FROM ghcr.io/snakepacker/python/3.9
+COPY --from=builder /usr/share/python3/pillow-runtime-libs.txt /usr/share/python3/pillow-runtime-libs.txt
+RUN xargs -ra /usr/share/python3/app/pkgdeps.txt apt-install
