@@ -7,11 +7,9 @@ endef
 images: build-base \
 		build-all \
 		build-pillow-all \
-		build-python-3.6 \
 		build-python-3.7 \
 		build-python-3.8 \
 		build-python-3.9 \
-		build-pillow-3.6 \
 		build-pillow-3.7 \
 		build-pillow-3.8 \
 		build-pillow-3.9 \
@@ -29,9 +27,6 @@ build-base:
 build-all: build-base
 	$(call build,all,all)
 
-build-python-3.6:
-	$(call build,python3.6,3.6)
-
 build-python-3.7:
 	$(call build,python3.7,3.7)
 
@@ -46,9 +41,6 @@ build-python-3.10:
 
 build-pillow-all:
 	$(call build,all-pillow,all-pillow)
-
-build-pillow-3.6:
-	$(call build,3.6-pillow,3.6-pillow)
 
 build-pillow-3.7:
 	$(call build,3.7-pillow,3.7-pillow)
@@ -84,12 +76,10 @@ publish:
 	$(call publish,base)
 	$(call publish,all)
 	$(call publish,all-pillow)
-	$(call publish,3.6)
 	$(call publish,3.7)
 	$(call publish,3.8)
 	$(call publish,3.9)
 	$(call publish,3.10)
-	$(call publish,3.6-pillow)
 	$(call publish,3.7-pillow)
 	$(call publish,3.8-pillow)
 	$(call publish,3.9-pillow)

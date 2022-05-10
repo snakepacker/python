@@ -5,7 +5,6 @@ ENV PYTHONDONTWRITEBYTECODE=True
 # Install headers for useful libraries
 RUN apt-install git-core build-essential
 
-ADD https://bootstrap.pypa.io/pip/3.6/get-pip.py /usr/share/python/get-pip-3.6.py
 ADD https://bootstrap.pypa.io/get-pip.py /usr/share/python/get-pip.py
 RUN apt-install \
 	python3-dev \
@@ -15,7 +14,6 @@ RUN apt-install \
 	python3-virtualenv \
 	python-is-python3
 
-RUN apt-install -y python3.6 python3.6-dev python3.6-venv
 RUN apt-install -y python3.7 python3.7-dev python3.7-venv
 RUN apt-install -y python3.9 python3.9-dev python3.9-venv
 RUN apt-install -y python3.10 python3.10-dev python3.10-venv python3.10-distutils
@@ -35,7 +33,6 @@ RUN apt-install \
 RUN ln -snf /dev/shm /root/.cargo
 
 RUN \
-	python3.6 /usr/share/python/get-pip-3.6.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
 	python3.7 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
 	python3.8 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
 	python3.9 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
