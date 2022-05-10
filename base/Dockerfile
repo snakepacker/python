@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:jammy
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ Etc/UTC
@@ -10,8 +10,7 @@ COPY apt.conf /etc/apt/apt.conf.d/snakepacker
 
 RUN apt-get update && \
 	apt-get upgrade -y && \
-	apt-get install -y --no-install-recommends gnupg1 openssl ca-certificates locales tzdata libffi7 apt-utils && \
-	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6A755776 && \
+	apt-get install -y --no-install-recommends gnupg2 openssl ca-certificates locales tzdata libffi7 apt-utils && \
 	apt-get autoremove -y && \
 	ln -snf /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
 	locale-gen en_US.UTF-8 && \
@@ -33,5 +32,6 @@ ENV LANG="en_US.UTF-8" \
 	LC_IDENTIFICATION="en_US.UTF-8"
 
 COPY deadsnakes.list /etc/apt/sources.list.d/deadsnakes.list
+COPY deadsnakes.gpg /etc/apt/trusted.gpg.d/deadsnakes.gpg
 COPY tools/ /usr/local/sbin/
 RUN chmod a+x /usr/local/sbin/* && rm -fr /var/log/* /tmp/*
