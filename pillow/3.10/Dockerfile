@@ -27,4 +27,4 @@ RUN find-libdeps /usr/share/python3/app > /usr/share/python3/pillow-runtime-libs
 
 FROM ghcr.io/snakepacker/python/3.10
 COPY --from=builder /usr/share/python3/pillow-runtime-libs.txt /usr/share/python3/pillow-runtime-libs.txt
-RUN xargs -ra /usr/share/python3/app/pkgdeps.txt apt-install
+RUN xargs -ra /usr/share/python3/pillow-runtime-libs.txt apt-install

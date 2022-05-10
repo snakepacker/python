@@ -46,4 +46,4 @@ RUN apt-install \
 	zlib1g-dev
 
 COPY --from=builder /usr/share/python3/pillow-runtime-libs.txt /usr/share/python3/pillow-runtime-libs.txt
-RUN xargs -ra /usr/share/python3/app/pkgdeps.txt apt-install
+RUN xargs -ra /usr/share/python3/pillow-runtime-libs.txt apt-install
