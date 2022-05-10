@@ -17,25 +17,25 @@ RUN apt-install \
 		libharfbuzz-gobject0 \
 		libharfbuzz-icu0 \
 		libharfbuzz0b \
-		libicu66 \
+		libicu70 \
 		libimagequant0 \
 		libjbig0 \
 		libjpeg-turbo8 \
 		libjpeg8 \
 		liblcms2-2 \
-		libmpdec2 \
+		libmpdec3 \
 		libopenjp2-7 \
 		libpcre16-3 \
 		libpcre2-16-0 \
 		libpcre2-32-0 \
-		libpcre2-posix2 \
+		libpcre2-posix3 \
 		libpcre32-3 \
 		libpcrecpp0v5 \
-		libperl5.30 \
+		libperl5.34 \
 		libpng16-16 \
 		libtiff5 \
 		libtiffxx5 \
-		libwebp6 \
+		libwebp7 \
 		libwebpdemux2 \
 		libwebpmux3 \
 		libxau6 \
