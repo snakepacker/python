@@ -21,7 +21,7 @@ RUN apt-install \
 
 RUN python3 -m venv /var/tmp/pillow-venv
 RUN /var/tmp/pillow-venv/bin/pip install --no-binary=:all: pillow
-RUN find-libdeps /usr/share/python3/app > /usr/share/python3/pillow-runtime-libs.txt
+RUN find-libdeps /var/tmp/pillow-venv > /usr/share/python3/pillow-runtime-libs.txt
 
 ############################################################################
 
