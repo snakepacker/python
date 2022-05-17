@@ -1,0 +1,4 @@
+DPkg::Post-Invoke { "find /var/cache/apt -iname '*.deb' -delete"; };
+APT::Update::Post-Invoke { "find /var/cache/apt -iname '*.deb' -delete"; };
+Dir::Cache::pkgcache "";
+Dir::Cache::srcpkgcache "";
