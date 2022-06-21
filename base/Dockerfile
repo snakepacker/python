@@ -34,5 +34,6 @@ ENV LANG="en_US.UTF-8" \
 
 COPY deadsnakes.list /etc/apt/sources.list.d/deadsnakes.list
 COPY deadsnakes.gpg /etc/apt/trusted.gpg.d/deadsnakes.gpg
+RUN chmod 600
 COPY tools/ /usr/local/sbin/
 RUN chmod a+x /usr/local/sbin/* && rm -fr /var/log/* /tmp/*
