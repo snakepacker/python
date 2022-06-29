@@ -7,7 +7,6 @@ ENV LANG en_US.UTF-8
 
 COPY sources.list /etc/apt/sources.list
 COPY apt.conf /etc/apt/apt.conf.d/snakepacker
-COPY docker-clean /etc/apt/apt.conf.d/docker-clean
 
 RUN apt-get update && \
 	apt-get upgrade -y && \
@@ -36,3 +35,4 @@ COPY deadsnakes.list /etc/apt/sources.list.d/deadsnakes.list
 COPY deadsnakes.gpg /etc/apt/trusted.gpg.d/deadsnakes.gpg
 COPY tools/ /usr/local/sbin/
 RUN chmod a+x /usr/local/sbin/* && rm -fr /var/log/* /tmp/*
+COPY docker-clean /etc/apt/apt.conf.d/docker-clean
