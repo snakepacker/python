@@ -1,0 +1,5 @@
+#!/bin/bash
+
+find /var/cache/apt -iname '*.deb' -delete
+
+exit 0
