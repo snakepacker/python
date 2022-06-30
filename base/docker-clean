@@ -1,4 +1,2 @@
-DPkg::Post-Invoke { "/usr/local/sbin/_apt-clean"; };
-APT::Update::Post-Invoke { "/usr/local/sbin/_apt-clean"; };
 Dir::Cache::pkgcache "";
 Dir::Cache::srcpkgcache "";
