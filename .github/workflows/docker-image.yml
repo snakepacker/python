@@ -76,6 +76,8 @@ jobs:
             tag: "3.9"
           - context: "python3.10"
             tag: "3.10"
+          - context: "python3.11"
+            tag: "3.11"
 
     steps:
       - uses: actions/checkout@v2
@@ -128,6 +130,8 @@ jobs:
             tag: 3.9-pillow
           - context: pillow/3.10
             tag: 3.10-pillow
+          - context: pillow/3.11
+            tag: 3.11-pillow
           - context: pillow/all
             tag: all-pillow
 

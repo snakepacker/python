@@ -18,6 +18,7 @@ RUN apt-install -y python3.7 python3.7-dev python3.7-venv
 RUN apt-install -y python3.8 python3.8-dev python3.8-venv
 RUN apt-install -y python3.9 python3.9-dev python3.9-venv
 RUN apt-install -y python3.10 python3.10-dev python3.10-venv python3.10-distutils
+RUN apt-install -y python3.11 python3.11-dev python3.11-venv python3.11-distutils
 
 RUN apt-install \
 	cargo \
@@ -37,7 +38,8 @@ RUN \
 	python3.7 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
 	python3.8 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
 	python3.9 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
-	python3.10 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython"
+	python3.10 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
+	python3.11 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython"
 
 # Upgrade preinstalled wheels
 RUN rm -fr \
@@ -57,6 +59,11 @@ RUN python3 -m venv /usr/share/python3/coveralls && \
 	/usr/share/python3/coveralls/bin/pip install coveralls && \
 	ln -snf /usr/share/python3/coveralls/bin/coveralls /usr/bin/coveralls && \
 	ln -snf /usr/share/python3/coveralls/bin/coveralls /usr/local/bin/coveralls
+
+RUN python3 -m venv /usr/share/python3/poetry && \
+	/usr/share/python3/poetry/bin/pip install poetry && \
+	ln -snf /usr/share/python3/poetry/bin/poetry /usr/bin/poetry && \
+	ln -snf /usr/share/python3/poetry/bin/poetry /usr/local/bin/poetry
 
 ENV PIP_CONFIG_FILE /etc/pip.conf
 
