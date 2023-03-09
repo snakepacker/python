@@ -1,6 +1,8 @@
 FROM ghcr.io/snakepacker/python/base
 
 ENV PYTHONDONTWRITEBYTECODE=True
+# PIP cache to /tmp
+ENV XDG_CACHE_HOME=/tmp/cache
 
 # Install headers for useful libraries
 RUN apt-install git-core build-essential
