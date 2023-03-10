@@ -101,7 +101,7 @@ jobs:
           username: mosquito
           password: ${{ secrets.DH_TOKEN }}
 
-      - uses: docker/build-push-action@v2
+      - uses: docker/build-push-action@v4
         with:
           context: ${{ matrix.image.context }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
@@ -157,7 +157,7 @@ jobs:
           username: mosquito
           password: ${{ secrets.DH_TOKEN }}
 
-      - uses: docker/build-push-action@v2
+      - uses: docker/build-push-action@v4
         with:
           context: ${{ matrix.image.context }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
@@ -219,7 +219,7 @@ jobs:
           username: mosquito
           password: ${{ secrets.DH_TOKEN }}
 
-      - uses: docker/build-push-action@v2
+      - uses: docker/build-push-action@v4
         with:
           context: ${{ matrix.image.context }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
