@@ -52,17 +52,20 @@ RUN rm -fr \
 		"pip==21.2.4" "wheel==0.37.0" "setuptools<60" \
 	&& rm -fr /tmp/wheels
 
-RUN python3 -m venv /usr/share/python3/tox && \
+RUN --mount=type=cache,target=/tmp/cache \
+    python3 -m venv /usr/share/python3/tox && \
 	/usr/share/python3/tox/bin/pip install tox && \
 	ln -snf /usr/share/python3/tox/bin/tox /usr/bin/tox && \
 	ln -snf /usr/share/python3/tox/bin/tox /usr/local/bin/tox
 
-RUN python3 -m venv /usr/share/python3/coveralls && \
+RUN --mount=type=cache,target=/tmp/cache \
+    python3 -m venv /usr/share/python3/coveralls && \
 	/usr/share/python3/coveralls/bin/pip install coveralls && \
 	ln -snf /usr/share/python3/coveralls/bin/coveralls /usr/bin/coveralls && \
 	ln -snf /usr/share/python3/coveralls/bin/coveralls /usr/local/bin/coveralls
 
-RUN python3 -m venv /usr/share/python3/poetry && \
+RUN --mount=type=cache,target=/tmp/cache \
+    python3 -m venv /usr/share/python3/poetry && \
 	/usr/share/python3/poetry/bin/pip install poetry && \
 	ln -snf /usr/share/python3/poetry/bin/poetry /usr/bin/poetry && \
 	ln -snf /usr/share/python3/poetry/bin/poetry /usr/local/bin/poetry
