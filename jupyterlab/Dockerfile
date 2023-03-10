@@ -26,9 +26,9 @@ FROM ghcr.io/snakepacker/python/3.10:pillow
 COPY --from=builder /usr/share/python3/app /usr/share/python3/app
 
 # Creating a symlink to the target binary (just for convenience)
-RUN ln -snf /usr/share/python3/app/bin/ipython /usr/bin/
+RUN ln -snf /usr/share/python3/app/bin/jupyter-lab /usr/bin/
 
 # Install the required library packages
 RUN xargs -ra /usr/share/python3/app/pkgdeps.txt apt-install
 
-CMD ["ipython"]
+CMD ["jupyter-lab"]
