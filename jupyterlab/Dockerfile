@@ -11,8 +11,7 @@ FROM ghcr.io/snakepacker/python/all:pillow as builder
 # Target folder should be same on build stage and on the target stage
 RUN python3.10 -m venv /usr/share/python3/app
 
-RUN /usr/share/python3/app/bin/pip install -U pip \
-    'ipython[notebook]' 'jupyterlab'
+RUN /usr/share/python3/app/bin/pip install -U pip jupyterlab
 
 # Will be find required system libraries and their packages
 RUN find-libdeps /usr/share/python3/app > /usr/share/python3/app/pkgdeps.txt

@@ -194,6 +194,8 @@ jobs:
             tag: gray
           - context: ruff
             tag: ruff
+          - context: jupyterlab
+            tag: jupyterlab
 
     steps:
       - uses: actions/checkout@v2
