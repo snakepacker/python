@@ -10,7 +10,7 @@ RUN find-libdeps /usr/share/python3/app > /usr/share/python3/app/pkgdeps.txt
 ########################################################################
 FROM ghcr.io/snakepacker/python/3.11
 
-COPY --from=pylava-builder /usr/share/python3/app /usr/share/python3/app
+COPY --from=ruff-builder /usr/share/python3/app /usr/share/python3/app
 RUN ln -snf /usr/share/python3/app/bin/ruff /usr/bin/ && mkdir -p /app
 
 # Install the required library packages
