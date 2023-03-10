@@ -192,6 +192,8 @@ jobs:
             tag: black
           - context: gray
             tag: gray
+          - context: ruff
+            tag: ruff
 
     steps:
       - uses: actions/checkout@v2
