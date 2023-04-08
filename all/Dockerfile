@@ -5,7 +5,7 @@ ENV PYTHONDONTWRITEBYTECODE=True
 ENV XDG_CACHE_HOME=/tmp/cache
 
 # Install headers for useful libraries
-RUN apt-install git-core build-essential
+RUN apt-install git-core build-essential pkg-config
 
 ADD https://bootstrap.pypa.io/get-pip.py /usr/share/python/get-pip.py
 RUN apt-install \
