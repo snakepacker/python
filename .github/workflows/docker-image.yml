@@ -54,7 +54,7 @@ jobs:
           push: ${{ github.ref == 'refs/heads/master' }}
           pull: true
           shm-size: 4G
-          tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
+          tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},ghcr.io/snakepacker/python:${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
 
 
   images:
@@ -110,7 +110,7 @@ jobs:
           push: ${{ github.ref == 'refs/heads/master' }}
           pull: true
           shm-size: 4G
-          tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
+          tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},ghcr.io/snakepacker/python:${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
 
 
   images-pillow:
@@ -166,7 +166,7 @@ jobs:
           push: ${{ github.ref == 'refs/heads/master' }}
           pull: true
           shm-size: 4G
-          tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
+          tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},ghcr.io/snakepacker/python:${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
 
 
   apps:
@@ -228,4 +228,4 @@ jobs:
           push: ${{ github.ref == 'refs/heads/master' }}
           pull: true
           shm-size: 4G
-          tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
+          tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},ghcr.io/snakepacker/python:${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}

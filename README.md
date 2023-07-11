@@ -7,10 +7,41 @@ This repository provides and demonstrates a way to pack python package into a
 compact Docker image, based on modern
 [Ubuntu Jammy](https://releases.ubuntu.com/jammy/) operation system.
 
-Available images
+
+Awailable images
 ----------------
 
-Docker Hub images
+This project is available both in the official docker repository and also on the Github Container Registry (`ghcr.io`).
+
+[`ghcr.io`](https://github.com/orgs/snakepacker/repositories)  | [`docker.io`](https://hub.docker.com/r/snakepacker/python)
+ ------- | ---------
+[`ghcr.io/snakepacker/python/all`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fall) | [`snakepacker/python:all`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=all)
+[`ghcr.io/snakepacker/python/all-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fall-pillow) | [`snakepacker/python:all-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=all-pillow)
+[`ghcr.io/snakepacker/python/3.11`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.11) | [`snakepacker/python:3.11`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.11)
+[`ghcr.io/snakepacker/python/3.11-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.11-pillow) | [`snakepacker/python:3.11-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.11-pillow)
+[`ghcr.io/snakepacker/python/3.10`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.10) | [`snakepacker/python:3.10`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.10)
+[`ghcr.io/snakepacker/python/3.10-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.10-pillow) | [`snakepacker/python:3.10-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.10-pillow)
+[`ghcr.io/snakepacker/python/3.9`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.9) | [`snakepacker/python:3.9`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.9)
+[`ghcr.io/snakepacker/python/3.9-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.9-pillow) | [`snakepacker/python:3.9-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.9-pillow)
+[`ghcr.io/snakepacker/python/3.8`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.8) | [`snakepacker/python:3.8`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.8)
+[`ghcr.io/snakepacker/python/3.8-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.8-pillow) | [`snakepacker/python:3.8-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.8-pillow)
+[`ghcr.io/snakepacker/python/3.7`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.7) | [`snakepacker/python:3.7`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.7)
+[`ghcr.io/snakepacker/python/3.7-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.7-pillow) | [`snakepacker/python:3.7-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.7-pillow)
+[`ghcr.io/snakepacker/python/pylama`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fpylama) | [`snakepacker/python:pylama`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=pylama)
+[`ghcr.io/snakepacker/python/pylava`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fpylava) | [`snakepacker/python:pylava`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=pylava)
+[`ghcr.io/snakepacker/python/ipython`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fipython) | [`snakepacker/python:ipython`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=ipython)
+[`ghcr.io/snakepacker/python/certbot`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fcertbot) | [`snakepacker/python:certbot`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=certbot)
+[`ghcr.io/snakepacker/python/black`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fblack) | [`snakepacker/python:black`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=black)
+[`ghcr.io/snakepacker/python/gray`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fgray) | [`snakepacker/python:gray`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=gray)
+[`ghcr.io/snakepacker/python/ruff`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fruff) | [`snakepacker/python:ruff`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=ruff)
+[`ghcr.io/snakepacker/python/jupyterlab`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fjupyterlab) | [`snakepacker/python:jupyterlab`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=jupyterlab)
+[`ghcr.io/snakepacker/python/base`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fbase) | [`snakepacker/python:base`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=base)
+
+
+Image descriptions
+------------------
+
+The images according to their purpose and features:
 
 Tag      | Info | Purpose | Features
  ------- | ---- | ------- | --------
@@ -26,21 +57,22 @@ all-pillow | ![](https://flat.badgen.net/docker/size/snakepacker/python/all-pill
 [3.9-pillow](https://docs.python.org/3/whatsnew/3.9.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.9-pillow/amd64?label=size) | target stage | pure python 3.9 with graphics libraries binaries
 [3.8-pillow](https://docs.python.org/3/whatsnew/3.8.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.8-pillow/amd64?label=size) | target stage | pure python 3.8 with graphics libraries binaries
 [3.7-pillow](https://docs.python.org/3/whatsnew/3.7.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.7-pillow/amd64?label=size) | target stage | pure python 3.7 with graphics libraries binaries
-[pylama](https://pylama.readthedocs.io/en/latest/) | ![](https://flat.badgen.net/docker/size/snakepacker/python/pylama/amd64?label=size) | ready to use | pylama application image (useful for drone.ci)
-[pylava](https://pylavadocs.readthedocs.io/en/latest/) | ![](https://flat.badgen.net/docker/size/snakepacker/python/pylava/amd64?label=size) | ready to use | pylava application image (useful for drone.ci)
+[pylama](https://pylama.readthedocs.io/en/latest/) | ![](https://flat.badgen.net/docker/size/snakepacker/python/pylama/amd64?label=size) | ready to use | pylama application image (useful for CI)
+[pylava](https://pylavadocs.readthedocs.io/en/latest/) | ![](https://flat.badgen.net/docker/size/snakepacker/python/pylava/amd64?label=size) | ready to use | pylava application image (useful for CI)
 [ipython](https://jupyter.org) | ![](https://flat.badgen.net/docker/size/snakepacker/python/ipython/amd64?label=size) | ready to use | ipython application image
 [certbot](https://certbot.eff.org) | ![](https://flat.badgen.net/docker/size/snakepacker/python/certbot/amd64?label=size) | ready to use | certbot application image
-[black](https://black.readthedocs.io/en/stable/) | ![](https://flat.badgen.net/docker/size/snakepacker/python/black/amd64?label=size) | ready to use | black application image (useful for drone.ci)
-[gray](https://github.com/dizballanze/gray) | ![](https://flat.badgen.net/docker/size/snakepacker/python/gray/amd64?label=size) | ready to use | gray application image (useful for drone.ci)
+[black](https://black.readthedocs.io/en/stable/) | ![](https://flat.badgen.net/docker/size/snakepacker/python/black/amd64?label=size) | ready to use | black application image (useful for CI)
+[gray](https://github.com/dizballanze/gray) | ![](https://flat.badgen.net/docker/size/snakepacker/python/gray/amd64?label=size) | ready to use | gray application image (useful for CI)
+[ruff](https://github.com/astral-sh/ruff) | ![](https://flat.badgen.net/docker/size/snakepacker/python/ruff/amd64?label=size) | ready to use | ruff linter image (useful for CI)
+[jupyterlab](https://github.com/jupyterlab/jupyterlab) | ![](https://flat.badgen.net/docker/size/snakepacker/python/jupyterlab/amd64?label=size) | ready to use | jupyterlab image
 base     | ![](https://flat.badgen.net/docker/size/snakepacker/python/base/amd64?label=size) |  | common layers
-
 
 
 Concept
 -------
 
 The main idea of this method is to build a `virtualenv` for your package using 
-heavy full-powered image (e.g. `snakepacker/python:all`, that contains all 
+heavy full-powered image (e.g. `ghcr.io/snakepacker/python:all`, that contains all 
 necessary headers, libraries, compiler, etc.), and then copy it into thin 
 `base image` with suitable Python version.
 
@@ -88,7 +120,7 @@ with the following content:
 # 1. All the Python versions
 # 2. required python headers
 # 3. C compiler and developer tools
-FROM snakepacker/python:all as builder
+FROM ghcr.io/snakepacker/python:all as builder
 
 # Create virtualenv on python 3.10
 # Target folder should be the same on the build stage and on the target stage
@@ -104,7 +136,7 @@ RUN find-libdeps /usr/share/python3/app > /usr/share/python3/app/pkgdeps.txt
 ####################### TARGET STAGE ############################
 #################################################################
 # Use the image version used on the build stage
-FROM snakepacker/python:3.10
+FROM ghcr.io/snakepacker/python:3.10
 
 # Copy virtualenv to the target image
 COPY --from=builder /usr/share/python3/app /usr/share/python3/app
