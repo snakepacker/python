@@ -17,6 +17,8 @@ This project is available both in the official docker repository and also on the
  ------- | ---------
 [`ghcr.io/snakepacker/python/all`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fall) | [`snakepacker/python:all`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=all)
 [`ghcr.io/snakepacker/python/all-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fall-pillow) | [`snakepacker/python:all-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=all-pillow)
+[`ghcr.io/snakepacker/python/3.12`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.12) | [`snakepacker/python:3.12`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.12)
+[`ghcr.io/snakepacker/python/3.12-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.12-pillow) | [`snakepacker/python:3.12-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.12-pillow)
 [`ghcr.io/snakepacker/python/3.11`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.11) | [`snakepacker/python:3.11`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.11)
 [`ghcr.io/snakepacker/python/3.11-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.11-pillow) | [`snakepacker/python:3.11-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.11-pillow)
 [`ghcr.io/snakepacker/python/3.10`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.10) | [`snakepacker/python:3.10`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.10)
@@ -47,11 +49,13 @@ Tag      | Info | Purpose | Features
  ------- | ---- | ------- | --------
 all      | ![](https://flat.badgen.net/docker/size/snakepacker/python/all/amd64?label=size) | build stage | all available python versions, libpython headers and compiler
 all-pillow | ![](https://flat.badgen.net/docker/size/snakepacker/python/all-pillow/amd64?label=size) | build stage |  all available python versions, libpython headers, graphics libraries headers and compiler
+[3.12](https://docs.python.org/3/whatsnew/3.12.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.12/amd64?label=size) | target stage | pure python 3.12
 [3.11](https://docs.python.org/3/whatsnew/3.11.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.11/amd64?label=size) | target stage | pure python 3.11
 [3.10](https://docs.python.org/3/whatsnew/3.10.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.10/amd64?label=size) | target stage | pure python 3.10
 [3.9](https://docs.python.org/3/whatsnew/3.9.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.9/amd64?label=size) | target stage | pure python 3.9
 [3.8](https://docs.python.org/3/whatsnew/3.8.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.8/amd64?label=size) | target stage | pure python 3.8
 [3.7](https://docs.python.org/3/whatsnew/3.7.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.7/amd64?label=size) | target stage | pure python 3.7
+[3.12-pillow](https://docs.python.org/3/whatsnew/3.12.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.12-pillow/amd64?label=size) | target stage | pure python 3.12 with graphics libraries binaries
 [3.11-pillow](https://docs.python.org/3/whatsnew/3.11.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.11-pillow/amd64?label=size) | target stage | pure python 3.11 with graphics libraries binaries
 [3.10-pillow](https://docs.python.org/3/whatsnew/3.10.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.10-pillow/amd64?label=size) | target stage | pure python 3.10 with graphics libraries binaries
 [3.9-pillow](https://docs.python.org/3/whatsnew/3.9.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.9-pillow/amd64?label=size) | target stage | pure python 3.9 with graphics libraries binaries
