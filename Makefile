@@ -15,6 +15,7 @@ images: build-base \
 		build-pillow-3.9 \
 		build-pillow-3.10 \
 		build-pillow-3.11 \
+		build-pillow-3.12 \
 		build-ipython \
 		build-black \
 		build-certbot \
@@ -43,6 +44,9 @@ build-python-3.10:
 build-python-3.11:
 	$(call build,python3.11,3.11)
 
+build-python-3.12:
+	$(call build,python3.12,3.12)
+
 build-pillow-all:
 	$(call build,all-pillow,all-pillow)
 
@@ -60,6 +64,9 @@ build-pillow-3.10:
 
 build-pillow-3.11:
 	$(call build,3.11-pillow,3.11-pillow)
+
+build-pillow-3.12:
+	$(call build,3.12-pillow,3.12-pillow)
 
 build-black:
 	$(call build,black,app/black)
@@ -88,8 +95,10 @@ publish:
 	$(call publish,3.9)
 	$(call publish,3.10)
 	$(call publish,3.11)
+	$(call publish,3.12)
 	$(call publish,3.7-pillow)
 	$(call publish,3.8-pillow)
 	$(call publish,3.9-pillow)
 	$(call publish,3.10-pillow)
 	$(call publish,3.11-pillow)
+	$(call publish,3.12-pillow)
