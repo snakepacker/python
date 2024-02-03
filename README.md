@@ -160,7 +160,7 @@ Useful tools
 
 All images contain ready to use and simple wrappers for easy image building.
 
-### apt-install
+`### apt-install
 
 Pretty simple bash script. The main purpose is removing the apt cache and temporary files after installation when you want to install something through apt-get install.
 
