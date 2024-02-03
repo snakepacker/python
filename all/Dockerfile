@@ -38,12 +38,12 @@ RUN apt-install \
 RUN ln -snf /dev/shm /root/.cargo
 
 RUN \
-	python3.7 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
-	python3.8 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
-	python3.9 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
-	python3.10 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
-	python3.11 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython" && \
-	python3.12 /usr/share/python/get-pip.py "pip == 21.2.4" "setuptools < 60" "wheel == 0.37.0" "cython"
+	python3.7 /usr/share/python/get-pip.py "pip == 24.0" "setuptools < 60" "wheel == 0.37.0" "cython" && \
+	python3.8 /usr/share/python/get-pip.py "pip == 24.0" "setuptools < 60" "wheel == 0.37.0" "cython" && \
+	python3.9 /usr/share/python/get-pip.py "pip == 24.0" "setuptools < 60" "wheel == 0.37.0" "cython" && \
+	python3.10 /usr/share/python/get-pip.py "pip == 24.0" "setuptools < 60" "wheel == 0.37.0" "cython" && \
+	python3.11 /usr/share/python/get-pip.py "pip == 24.0" "setuptools < 60" "wheel == 0.37.0" "cython" && \
+	python3.12 /usr/share/python/get-pip.py "pip == 24.0" "setuptools < 60" "wheel == 0.37.0" "cython"
 
 # Upgrade preinstalled wheels
 RUN rm -fr \
@@ -51,7 +51,7 @@ RUN rm -fr \
 	/usr/share/python-wheels/wheel*.whl \
 	/usr/share/python-wheels/setuptools*.whl \
 	&& python3 -m pip wheel --cache-dir /tmp/wheels -w /usr/share/python-wheels --no-binary=:all: \
-		"pip==21.2.4" "wheel==0.37.0" "setuptools<60" \
+		"pip==24.0" "wheel==0.37.0" "setuptools<60" \
 	&& rm -fr /tmp/wheels
 
 RUN --mount=type=cache,target=/tmp/cache \
