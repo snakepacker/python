@@ -12,11 +12,13 @@ images: build-base \
 		build-python-3.10 \
 		build-python-3.11 \
 		build-python-3.12 \
+		build-python-3.13 \
 		build-pillow-3.8 \
 		build-pillow-3.9 \
 		build-pillow-3.10 \
 		build-pillow-3.11 \
 		build-pillow-3.12 \
+		build-pillow-3.13 \
 		build-ipython \
 		build-black \
 		build-certbot \
@@ -45,23 +47,29 @@ build-python-3.11:
 build-python-3.12:
 	$(call build,python3.12,3.12:latest)
 
+build-python-3.13:
+	$(call build,python3.13,3.13:latest)
+
 build-pillow-all:
-	$(call build,pillow/all,all:pillow)
+	$(call build,pillow/all,all-pillow)
 
 build-pillow-3.8:
-	$(call build,pillow/3.8,3.8:pillow)
+	$(call build,pillow/3.8,3.8-pillow)
 
 build-pillow-3.9:
-	$(call build,pillow/3.9,3.9:pillow)
+	$(call build,pillow/3.9,3.9-pillow)
 
 build-pillow-3.10:
-	$(call build,pillow/3.10,3.10:pillow)
+	$(call build,pillow/3.10,3.10-pillow)
 
 build-pillow-3.11:
-	$(call build,pillow/3.11,3.11:pillow)
+	$(call build,pillow/3.11,3.11-pillow)
 
 build-pillow-3.12:
-	$(call build,pillow/3.12,3.12:pillow)
+	$(call build,pillow/3.12,3.12-pillow)
+
+build-pillow-3.13:
+	$(call build,pillow/3.13,3.13-pillow)
 
 build-black:
 	$(call build,black,app/black:latest)
@@ -90,8 +98,10 @@ publish:
 	$(call publish,3.10)
 	$(call publish,3.11)
 	$(call publish,3.12)
+	$(call publish,3.13)
 	$(call publish,3.8-pillow)
 	$(call publish,3.9-pillow)
 	$(call publish,3.10-pillow)
 	$(call publish,3.11-pillow)
 	$(call publish,3.12-pillow)
+	$(call publish,3.13-pillow)
