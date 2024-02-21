@@ -22,6 +22,7 @@ RUN apt-install -y python3.9 python3.9-dev python3.9-venv
 RUN apt-install -y python3.10 python3.10-dev python3.10-venv python3.10-distutils
 RUN apt-install -y python3.11 python3.11-dev python3.11-venv python3.11-distutils
 RUN apt-install -y python3.12 python3.12-dev python3.12-venv python3.12-distutils
+RUN apt-install -y python3.13 python3.13-dev python3.13-venv python3.13-nogil
 
 RUN apt-install \
 	cargo \
@@ -43,7 +44,8 @@ RUN \
 	python3.9 /usr/share/python/get-pip.py "pip == 24.0" "setuptools < 60" "wheel == 0.37.0" "cython" && \
 	python3.10 /usr/share/python/get-pip.py "pip == 24.0" "setuptools < 60" "wheel == 0.37.0" "cython" && \
 	python3.11 /usr/share/python/get-pip.py "pip == 24.0" "setuptools < 60" "wheel == 0.37.0" "cython" && \
-	python3.12 /usr/share/python/get-pip.py "pip == 24.0" "setuptools < 60" "wheel == 0.37.0" "cython"
+	python3.12 /usr/share/python/get-pip.py "pip == 24.0" "setuptools < 60" "wheel == 0.37.0" "cython" && \
+    python3.13 /usr/share/python/get-pip.py "pip == 24.0" "setuptools < 60" "wheel == 0.37.0" "cython"
 
 # Upgrade preinstalled wheels
 RUN rm -fr \
