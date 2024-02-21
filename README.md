@@ -27,8 +27,6 @@ This project is available both in the official docker repository and also on the
 [`ghcr.io/snakepacker/python/3.9-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.9-pillow) | [`snakepacker/python:3.9-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.9-pillow)
 [`ghcr.io/snakepacker/python/3.8`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.8) | [`snakepacker/python:3.8`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.8)
 [`ghcr.io/snakepacker/python/3.8-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.8-pillow) | [`snakepacker/python:3.8-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.8-pillow)
-[`ghcr.io/snakepacker/python/3.7`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.7) | [`snakepacker/python:3.7`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.7)
-[`ghcr.io/snakepacker/python/3.7-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.7-pillow) | [`snakepacker/python:3.7-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.7-pillow)
 [`ghcr.io/snakepacker/python/pylama`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fpylama) | [`snakepacker/python:pylama`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=pylama)
 [`ghcr.io/snakepacker/python/pylava`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fpylava) | [`snakepacker/python:pylava`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=pylava)
 [`ghcr.io/snakepacker/python/ipython`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fipython) | [`snakepacker/python:ipython`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=ipython)
@@ -54,13 +52,11 @@ all-pillow | ![](https://flat.badgen.net/docker/size/snakepacker/python/all-pill
 [3.10](https://docs.python.org/3/whatsnew/3.10.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.10/amd64?label=size) | target stage | pure python 3.10
 [3.9](https://docs.python.org/3/whatsnew/3.9.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.9/amd64?label=size) | target stage | pure python 3.9
 [3.8](https://docs.python.org/3/whatsnew/3.8.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.8/amd64?label=size) | target stage | pure python 3.8
-[3.7](https://docs.python.org/3/whatsnew/3.7.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.7/amd64?label=size) | target stage | pure python 3.7
 [3.12-pillow](https://docs.python.org/3/whatsnew/3.12.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.12-pillow/amd64?label=size) | target stage | pure python 3.12 with graphics libraries binaries
 [3.11-pillow](https://docs.python.org/3/whatsnew/3.11.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.11-pillow/amd64?label=size) | target stage | pure python 3.11 with graphics libraries binaries
 [3.10-pillow](https://docs.python.org/3/whatsnew/3.10.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.10-pillow/amd64?label=size) | target stage | pure python 3.10 with graphics libraries binaries
 [3.9-pillow](https://docs.python.org/3/whatsnew/3.9.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.9-pillow/amd64?label=size) | target stage | pure python 3.9 with graphics libraries binaries
 [3.8-pillow](https://docs.python.org/3/whatsnew/3.8.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.8-pillow/amd64?label=size) | target stage | pure python 3.8 with graphics libraries binaries
-[3.7-pillow](https://docs.python.org/3/whatsnew/3.7.html) | ![](https://flat.badgen.net/docker/size/snakepacker/python/3.7-pillow/amd64?label=size) | target stage | pure python 3.7 with graphics libraries binaries
 [pylama](https://pylama.readthedocs.io/en/latest/) | ![](https://flat.badgen.net/docker/size/snakepacker/python/pylama/amd64?label=size) | ready to use | pylama application image (useful for CI)
 [pylava](https://pylavadocs.readthedocs.io/en/latest/) | ![](https://flat.badgen.net/docker/size/snakepacker/python/pylava/amd64?label=size) | ready to use | pylava application image (useful for CI)
 [ipython](https://jupyter.org) | ![](https://flat.badgen.net/docker/size/snakepacker/python/ipython/amd64?label=size) | ready to use | ipython application image

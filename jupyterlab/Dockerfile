@@ -20,7 +20,7 @@ RUN find-libdeps /usr/share/python3/app > /usr/share/python3/app/pkgdeps.txt
 ####################### TARGET STAGE ############################
 #################################################################
 # Use the image version used on the build stage
-FROM ghcr.io/snakepacker/python/3.10:pillow
+FROM ghcr.io/snakepacker/python/3.11-pillow
 
 # Copying virtualenv to the target image
 COPY --from=builder /usr/share/python3/app /usr/share/python3/app
