@@ -1,7 +1,7 @@
 A simple way to build a Python project
 ======================================
 
-![](https://github.com/snakepacker/python/raw/master/logo.png)
+![](https://github.com/snakepacker/python/raw/master/logo.svg)
 
 This repository provides and demonstrates a way to pack python package into a
 compact Docker image, based on modern
@@ -17,6 +17,8 @@ This project is available both in the official docker repository and also on the
  ------- | ---------
 [`ghcr.io/snakepacker/python/all`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fall) | [`snakepacker/python:all`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=all)
 [`ghcr.io/snakepacker/python/all-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fall-pillow) | [`snakepacker/python:all-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=all-pillow)
+[`ghcr.io/snakepacker/python/3.13`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.13) | [`snakepacker/python:3.13`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.13)
+[`ghcr.io/snakepacker/python/3.13-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.13-pillow) | [`snakepacker/python:3.13-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.13-pillow)
 [`ghcr.io/snakepacker/python/3.12`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.12) | [`snakepacker/python:3.12`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.12)
 [`ghcr.io/snakepacker/python/3.12-pillow`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.12-pillow) | [`snakepacker/python:3.12-pillow`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.12-pillow)
 [`ghcr.io/snakepacker/python/3.11`](https://github.com/orgs/snakepacker/packages/container/package/python%2F3.11) | [`snakepacker/python:3.11`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=3.11)
