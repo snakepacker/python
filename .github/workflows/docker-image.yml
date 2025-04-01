@@ -2,17 +2,15 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
   schedule:
     - cron: "0 18 * * FRI"
     - cron: "0 18 * * WED"
 
 jobs:
-
   base:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -114,7 +112,6 @@ jobs:
           shm-size: 4G
           tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},ghcr.io/snakepacker/python:${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
 
-
   images-pillow:
     needs: images
     runs-on: ubuntu-latest
@@ -172,7 +169,6 @@ jobs:
           shm-size: 4G
           tags: ghcr.io/snakepacker/python/${{ matrix.image.tag }},ghcr.io/snakepacker/python:${{ matrix.image.tag }},snakepacker/python:${{ matrix.image.tag }}
 
-
   apps:
     needs:
       - images
@@ -198,6 +194,8 @@ jobs:
             tag: gray
           - context: ruff
             tag: ruff
+          - context: uv
+            tag: uv
           - context: jupyterlab
             tag: jupyterlab
 

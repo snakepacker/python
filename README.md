@@ -36,6 +36,7 @@ This project is available both in the official docker repository and also on the
 [`ghcr.io/snakepacker/python/black`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fblack) | [`snakepacker/python:black`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=black)
 [`ghcr.io/snakepacker/python/gray`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fgray) | [`snakepacker/python:gray`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=gray)
 [`ghcr.io/snakepacker/python/ruff`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fruff) | [`snakepacker/python:ruff`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=ruff)
+[`ghcr.io/snakepacker/python/uv`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fuv) | [`snakepacker/python:uv`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=uv)
 [`ghcr.io/snakepacker/python/jupyterlab`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fjupyterlab) | [`snakepacker/python:jupyterlab`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=jupyterlab)
 [`ghcr.io/snakepacker/python/base`](https://github.com/orgs/snakepacker/packages/container/package/python%2Fbase) | [`snakepacker/python:base`](https://hub.docker.com/r/snakepacker/python/tags?page=1&name=base)
 
@@ -68,6 +69,7 @@ all-pillow | ![](https://flat.badgen.net/docker/size/snakepacker/python/all-pill
 [black](https://black.readthedocs.io/en/stable/) | ![](https://flat.badgen.net/docker/size/snakepacker/python/black/amd64?label=size)       | ready to use | black application image (useful for CI)
 [gray](https://github.com/dizballanze/gray) | ![](https://flat.badgen.net/docker/size/snakepacker/python/gray/amd64?label=size)        | ready to use | gray application image (useful for CI)
 [ruff](https://github.com/astral-sh/ruff) | ![](https://flat.badgen.net/docker/size/snakepacker/python/ruff/amd64?label=size)        | ready to use | ruff linter image (useful for CI)
+[uv](https://github.com/astral-sh/uv) | ![](https://flat.badgen.net/docker/size/snakepacker/python/uv/amd64?label=size)        | ready to use | An extremely fast Python package and project manager (useful for CI)
 [jupyterlab](https://github.com/jupyterlab/jupyterlab) | ![](https://flat.badgen.net/docker/size/snakepacker/python/jupyterlab/amd64?label=size)  | ready to use | jupyterlab image
 base     | ![](https://flat.badgen.net/docker/size/snakepacker/python/base/amd64?label=size)        |  | common layers
 
@@ -75,45 +77,45 @@ base     | ![](https://flat.badgen.net/docker/size/snakepacker/python/base/amd64
 Concept
 -------
 
-The main idea of this method is to build a `virtualenv` for your package using 
-heavy full-powered image (e.g. `ghcr.io/snakepacker/python:all`, that contains all 
-necessary headers, libraries, compiler, etc.), and then copy it into thin 
+The main idea of this method is to build a `virtualenv` for your package using
+heavy full-powered image (e.g. `ghcr.io/snakepacker/python:all`, that contains all
+necessary headers, libraries, compiler, etc.), and then copy it into thin
 `base image` with suitable Python version.
 
 Reasons
 -------
 
-Why so complex? You could just `COPY` directory with your python project into 
-Docker container, and for the first point of view this seems to be reasonable. 
+Why so complex? You could just `COPY` directory with your python project into
+Docker container, and for the first point of view this seems to be reasonable.
 
 But just copying directory with python project cause several problems:
 
-- Generated on different operating system .pyc files can be put into Docker 
-  image accidentally. Thus, python would try to rewrite .pyc with correct ones 
-  each time when Docker image would be started. If you would run Docker image 
-  in read-only mode - your application would break.  
-   
-- Large possibility that you would also pack garbage files: pytest and tox 
-  cache, developer's virtualenv and other files, that just increate the size of 
+- Generated on different operating system .pyc files can be put into Docker
+  image accidentally. Thus, python would try to rewrite .pyc with correct ones
+  each time when Docker image would be started. If you would run Docker image
+  in read-only mode - your application would break.
+
+- Large possibility that you would also pack garbage files: pytest and tox
+  cache, developer's virtualenv and other files, that just increate the size of
   the resulting image.
 
-- No explicit entrypoint. It is not obvious what commands end user is able to 
+- No explicit entrypoint. It is not obvious what commands end user is able to
   run (we hope you've implemented `-h` or `--help` arguments).
-  
-- By default, tox interprets your package as python module, e.g. it tries to 
+
+- By default, tox interprets your package as python module, e.g. it tries to
   run `pip install .` when preparing environment.
 
 Yes, of course, you can solve all of those problems using hacks, specific
-settings, .dockeridnore file, and other tricks. But it would be non-intuitive 
+settings, .dockeridnore file, and other tricks. But it would be non-intuitive
 and non-obvious for your users.
 
-So, we recommend to spend a little more time and pack your package carefully, 
+So, we recommend to spend a little more time and pack your package carefully,
 so your users would run it with pleasure.
 
 Example
 -------
 
-For example, you may build the `jupyter notebook`. Just create a Dockerfile 
+For example, you may build the `jupyter notebook`. Just create a Dockerfile
 with the following content:
 
 ```Dockerfile
@@ -168,7 +170,7 @@ All images contain ready to use and simple wrappers for easy image building.
 
 Pretty simple bash script. The main purpose is removing the apt cache and temporary files after installation when you want to install something through apt-get install.
 
-Otherwise, you have to write something like this 
+Otherwise, you have to write something like this
 
 ```bash
 apt-get update && \
