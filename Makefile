@@ -7,13 +7,11 @@ endef
 images: build-base \
 		build-all \
 		build-pillow-all \
-		build-python-3.8 \
 		build-python-3.9 \
 		build-python-3.10 \
 		build-python-3.11 \
 		build-python-3.12 \
 		build-python-3.13 \
-		build-pillow-3.8 \
 		build-pillow-3.9 \
 		build-pillow-3.10 \
 		build-pillow-3.11 \
@@ -32,9 +30,6 @@ build-base:
 build-all: build-base
 	$(call build,all,all:latest)
 
-build-python-3.8:
-	$(call build,python3.8,3.8:latest)
-
 build-python-3.9:
 	$(call build,python3.9,3.9:latest)
 
@@ -52,9 +47,6 @@ build-python-3.13:
 
 build-pillow-all:
 	$(call build,pillow/all,all-pillow)
-
-build-pillow-3.8:
-	$(call build,pillow/3.8,3.8-pillow)
 
 build-pillow-3.9:
 	$(call build,pillow/3.9,3.9-pillow)

@@ -1,9 +1,9 @@
 FROM ubuntu:jammy
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV TZ Etc/UTC
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Etc/UTC
 
-ENV LANG en_US.UTF-8
+ENV LANG=en_US.UTF-8
 
 COPY sources.list /etc/apt/sources.list
 COPY apt.conf /etc/apt/apt.conf.d/snakepacker

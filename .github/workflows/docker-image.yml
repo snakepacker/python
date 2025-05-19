@@ -66,8 +66,6 @@ jobs:
         image:
           - context: "all"
             tag: "all"
-          - context: "python3.8"
-            tag: "3.8"
           - context: "python3.9"
             tag: "3.9"
           - context: "python3.10"
@@ -121,8 +119,6 @@ jobs:
 
       matrix:
         image:
-          - context: pillow/3.8
-            tag: 3.8-pillow
           - context: pillow/3.9
             tag: 3.9-pillow
           - context: pillow/3.10
