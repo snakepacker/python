@@ -16,6 +16,9 @@ def check_port(host, port):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         return sock.connect_ex((host, port)) == 0
+    except OSError as e:
+        logging.error(f"Can't connect to {host}:{port} — {e}")
+        return False
     finally:
         sock.close()
 
