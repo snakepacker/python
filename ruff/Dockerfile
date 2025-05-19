@@ -1,14 +1,14 @@
 #################################################################
 FROM ghcr.io/snakepacker/python/all as ruff-builder
 
-RUN python3.11 -m venv /usr/share/python3/app
+RUN python3.13 -m venv /usr/share/python3/app
 RUN /usr/share/python3/app/bin/pip install -U 'ruff'
 
 # Will be find required system libraries and their packages
 RUN find-libdeps /usr/share/python3/app > /usr/share/python3/app/pkgdeps.txt
 
 ########################################################################
-FROM ghcr.io/snakepacker/python/3.11
+FROM ghcr.io/snakepacker/python/3.13
 
 COPY --from=ruff-builder /usr/share/python3/app /usr/share/python3/app
 RUN ln -snf /usr/share/python3/app/bin/ruff /usr/bin/ && mkdir -p /app
